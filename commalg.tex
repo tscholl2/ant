@@ -235,7 +235,7 @@ $$\det(PAQ) = \det(P)\det(A)\det(Q) = \pm \det(A).$$
 
 We compute each of the above Smith forms using \sage,
 along with the corresponding transformation matrices.
-To do this we use the \sage{} command {\tt matrix},
+To do this we use the \sage command {\tt matrix},
 which takes as input the base ring, the number
 of rows, and the entries. The output of {\tt matrix}
 is a matrix object which has the method {\tt smith\_form}.
@@ -357,7 +357,7 @@ m.smith_form()[0]
 	Recall Smith normal form defined in Proposition~\ref{prop:smith}. With only minor modifications, then the proposition and proof will work over any principle ideal domain. Find and apply these modifications then find the Smith normal form of the matrix $\begin{pmatrix} 1 & 2 & 3 \\ 0 & 1+i & 2 \\ 0 & 1 & 5 \end{pmatrix}$.
 	
 	\begin{hint}
-		You can use \sage{} to verify your answer. However, you will need to make explicitly construct the Gaussian integers in order to input the matrix. You can do this by the following code.
+		You can use \sage to verify your answer. However, you will need to make explicitly construct the Gaussian integers in order to input the matrix. You can do this by the following code.
 	\end{hint}
 	\begin{sagecode}
 	\begin{sagecell}
@@ -701,7 +701,7 @@ then $6\mid n$, since $6\mid 12$ and $6\mid 18$.
 Also, $6=18-12\in I$, so $I=(6)$.
 
 The ring $\Z$
-in \sage{} is {\tt ZZ}, which is Noetherian.
+in \sage is {\tt ZZ}, which is Noetherian.
 \begin{sagecode}
 \begin{sagecell}
 ZZ.is_noetherian()
@@ -710,7 +710,7 @@ ZZ.is_noetherian()
 True
 \end{sageout}
 \end{sagecode}
-We create the ideal $I$ in \sage{} as follows, and note that
+We create the ideal $I$ in \sage as follows, and note that
 it is principal:
 \begin{sagecode}
 \begin{sagecell}
@@ -895,7 +895,7 @@ x^2 - 6*x + 7
 
 \begin{exercise}
 	Find the minimal polynomial of $\sqrt{2} + \sqrt{3}$ by hand.
-	Check your result with \sage{}.
+	Check your result with \sage.
 \end{exercise}
 
 \begin{lemma}\label{lem:mindiv}
