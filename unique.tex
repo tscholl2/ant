@@ -11,6 +11,22 @@ more!) is governed by the class group of $\O_K$, which is the quotient
 of the group of fractional ideals by the principal fractional ideals
 (see Chapter~\ref{ch:classgroup}).
 
+\begin{exercise}
+	This exercise illustrates the failure of unique factorization in the ring
+	$\O_K$ of integers of $K = \Q(\sqrt{-5})$.
+	\begin{enumerate}
+		\item Give an element $\alpha \in \O_K$ that factors in two distinct
+		ways into irreducible elements.
+		\item Observe explicitly that the $(\alpha)$ factors uniquely, i.e.,
+		the two distinct factorization in the previous part of this problem
+		do not lead to two distinct factorization of the ideal $(\alpha)$
+		into prime ideals.
+	\end{enumerate}
+	\begin{hint}
+		$\O_K = \Z[\sqrt{-5}]$.
+	\end{hint}
+\end{exercise}
+
 \section{Dedekind Domains}
 
 Recall (Corollary~\ref{prop:intnoetherian}) that we proved that the
@@ -489,6 +505,15 @@ ideals to mathematics over a century ago.
 	both sides by the inverse.
 	Repeating this argument finishes the proof of uniqueness.
 \end{proof}
+
+\begin{exercise}
+	Factor the ideal $(10)$ as a product of primes
+	in the ring of integers of $\Q(\sqrt{11})$. You are allowed
+	to use a computer, as long as you show the commands you use.
+	\begin{hint}
+		In \sage, an ideal {\tt I} can be factored using {\tt I.factor()}.
+	\end{hint}
+\end{exercise}
 
 \begin{theorem}\label{thm:uniqfac}
 	\icor{factorization of fractional ideals}
