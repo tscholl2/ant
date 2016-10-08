@@ -96,13 +96,20 @@ the elements of $\pi^{-1}(p\Z)$ are the prime ideals of $\O_K$ that
 contain~$p$, i.e., the primes that divide $p\O_K$.
 This chapter is about how to compute the $\p_i$ and $e_i$.
 
+\begin{exercise}
+	Let $L/K$ be an extension of number fields. Let $\p$ be a prime of $K$.
+	Show that the factorization of the ideal $\p\O_L$ contains exactly the primes
+	of $\O_L$ that lay over $\p$. That is, a prime $\q$ of $\O_L$ appears in
+	the factorization of $\p\O_L$ if and only if $\q \cap \O_K = \p$.
+\end{exercise}
+
 \begin{remark}
   More technically, in algebraic geometry one defines the inverse
   image of the point $p\Z$ to be the spectrum of the tensor product
   $\O_K \tensor_{\Z} \Z/\p\Z$; by a generalization of the Chinese
   Remainder Theorem, we have
 $$
-  \O_K \tensor_{\Z} \left(\Z/\p\Z\right) \isom \oplus \O_K/\p_i^{e_i}.
+  \O_K \tensor_{\Z} \left(\Z/\p\Z\right) \isom \bigoplus \O_K/\p_i^{e_i}.
 $$
 \end{remark}
 
