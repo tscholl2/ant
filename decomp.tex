@@ -299,9 +299,7 @@ There are exactly three possibilities for $e$, $f$ and $g$ :
 	By Theorem~\ref{thm:fac1} a prime $p$ is ramified in $\O_K$ if and only if
 	$h$ has a double root modulo~$p$, which is equivalent to $p$ dividing
 	the discriminant of $h$. This shows there are only finitely many ramified
-	primes. More generally, the ramified primes are exactly those
-	that divide the discriminant (see \cite[Thm.~24]{marcus1977number}
-	or \cite[Cor.~III.2.12]{neukirch1999}).
+	primes.
 
 	\item[\normalfont{(Inert):}] $e=1$, $f=2$, $g=1$: The prime $p$ is \emph{inert} in $\O_K$,
 	which means $p\O_K = \p$ is prime.  It is a nontrivial theorem that
@@ -409,6 +407,16 @@ where the $\q_i$ ranger over the primes of $\O_L$ laying over $\p$.
 		If $\p$ is totally ramified in $L$ and unramified in $L'$
 		then $L\cap L' = K$.
 	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Let $K$ be a number field and $d_K$ the discriminant of $K$.
+	Prove that $p\mid d_K$ if and only if $p$ ramifies in $K$.
+
+	\begin{hint}
+		This is proved in many books, see for example
+		\cite[Thm.~24]{marcus1977number} or \cite[Cor.~III.2.12]{neukirch1999}
+	\end{hint}
 \end{exercise}
 
 \section{The Decomposition Group}
@@ -567,6 +575,22 @@ and the number of primes at each step of the tower.
 	\caption{Decomposition in the fixed field $K^D$.}
 	\label{tbl:decompfield}
 \end{table}
+
+\begin{exercise}
+	Give an example of each of the following:
+	\begin{enumerate}
+		\item A finite nontrivial Galois extension $K$
+		of $\Q$ and a prime ideal $\p$ such that $D_\p = \Gal(K/\Q)$.
+		\item A finite nontrivial Galois extension $K$ of
+		$\Q$ and a prime ideal $\p$ such that $D_\p$ has order~$1$.
+		\item A finite Galois extension~$K$ of
+		$\Q$ and a prime ideal $\p$ such that $D_\p$ is not a normal
+		subgroup of $\Gal(K/\Q)$.
+		\item A finite Galois extension $K$ of
+		$\Q$ and a prime ideal $\p$ such that $I_\p$ is not a normal
+		subgroup of $\Gal(K/\Q)$.
+	\end{enumerate}
+\end{exercise}
 
 \subsection{Galois groups of finite fields}\label{sec:galoisfinite}
 
@@ -928,6 +952,27 @@ $$
 %		contains many index-two subgroups that do not correspond to
 %		quadratic extensions of~$\Q$.
 %	\end{hint}
+\end{exercise}
+
+\begin{exercise}
+	Let $S_3$ by the symmetric group on three symbols, which has order $6$.
+	\begin{enumerate}
+		\item \label{ex:a} Observe that $S_3\isom D_3$, where $D_3$ is
+		the dihedral group of order $6$, which is the group of symmetries of
+		an equilateral triangle.
+		\item Use (\ref{ex:a}) to write down an explicit
+		embedding $S_3\hra \GL_2(\C)$.
+		\item Let $K$ be the number field $\Q(\sqrt[3]{2},\omega)$,
+		where $\omega^3=1$ is a nontrivial cube root of unity.  Show
+		that $K$ is a Galois extension with Galois group isomorphic to~$S_3$.
+		\item We thus obtain a $2$-dimensional irreducible complex
+		Galois representation
+		$$
+		\rho:\Gal(\Qbar/\Q) \to \Gal(K/\Q)\isom S_3 \subset \GL_2(\C).
+		$$
+		Compute a representative matrix of $\Frob_p$ and the characteristic polynomial
+		of $\Frob_p$ for $p=5,7,11,13$.
+	\end{enumerate}
 \end{exercise}
 
 Fix a Galois representation~$\rho$ and let $K$ be the fixed field of
