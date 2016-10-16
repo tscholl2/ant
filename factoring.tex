@@ -412,8 +412,9 @@ $$\O_K/\p'\isom (\O_K/p\O_K)/(f(\tilde{a}))
 \isom (\Z[a]/p\Z[a]) / (f(\tilde{a})) \subset \Fpbar,$$
 where $\tilde{a}$ denotes the image of $a$ in $\O_K/p\O_K$.
 
-We formalize the above discussion in the following theorem (note: we will
-not prove that the powers are $e_i$ here):
+We formalize the above discussion, together with
+Exercise~\ref{exercise:ramification-for-prime-factoring-easy-way},
+in the following theorem:
 \begin{theorem}\label{thm:fac1}\ithm{prime ideal factorization}
 Let $f\in\Z[x]$ be the minimal polynomial of~$a$ over~$\Z$.
 Suppose that~$p\nmid [\O_K:\Z[a]]$ is a prime.
@@ -436,6 +437,22 @@ $$
 %contains the points $\{\p_1,\p_2,\ldots, \p_t\}$
 %with multiplicites $e_i$.
 \end{theorem}
+
+\begin{exercise}\label{exercise:ramification-for-prime-factoring-easy-way}
+	Let $p$ be a prime. Let $\O_K$ be the ring of integers of a number
+	field $K$, and suppose that $a\in \O_K$ is such that $[\O_K:\Z[a]]$ is
+	finite and coprime to~$p$. Let $f(x)$ be the minimal polynomial of~$a$.
+	We have already shows that if the reduction $\overline{f}\in\F_p[x]$ of $f$
+	factors as
+	$$
+		\overline{f} = \prod g_i^{e_i},
+	$$
+	where the $g_i$ are distinct irreducible polynomials in $\F_p[x]$,
+	then the primes appearing in the factorization of $p\O_K$ are the
+	ideals $(p,g_i(a))$. Show that the exponents of the primes in the
+	factorization of $p\O_K$ are the $e_i$.
+\end{exercise}
+
 
 We return to the example from above, in which $K=\Q(a)$, where~$a$ is
 a root of $f = x^5+7x^4+3x^2-x+1$.  The ring
