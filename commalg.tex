@@ -926,10 +926,10 @@ x^2 - 6*x + 7
 \begin{proof}
 	\hfill
 	\begin{description}
-		\item[$(\impliedby)$:]
+		\item[\normalfont$(\impliedby)$:]
 			Since $f\in \Z[x]$ is monic (by definition) and $f(\alpha)=0$,
 			we see immediately that $\alpha$ is an algebraic integer.
-		\item[$(\implies)$:]
+		\item[\normalfont$(\implies)$:]
 			Since $\alpha$ is an algebraic integer, there is
 			some nonzero monic $g\in\Z[x]$ such that $g(\alpha)=0$.
 			By Lemma~\ref{lem:mindiv}, we have $g=fh$, for some $h\in\Q[x]$,
@@ -1241,6 +1241,13 @@ This fact is important enough to be stated as a separate theorem.
 	the quotient $\O_K/R$ of abelian groups is finite.
 	(By definition $R$ must contain $1$ because it is a ring.)
 \end{definition}
+
+\begin{exercise}
+	Let $R$ be a subring of $\O_K$. Show that $R$ is an order of $\O_K$
+	if and only if $R$ contains a spanning set for $K$ as a vector space
+	over $\Q$.
+\end{exercise}
+
 As noted above, $\Z[i]$ is the ring of integers of $\Q(i)$.  For every
 nonzero integer~$n$, the subring $\Z+ni\Z$ of $\Z[i]$ is an order.
 The subring $\Z$ of $\Z[i]$ is not an order, because $\Z$ does not
@@ -1258,8 +1265,7 @@ $\Z[i]$ is not an order because it is not a ring.
 \begin{remark}
 	Exercise~\ref{ex:orderInQuadraticExts} is used in
 	elliptic curve cryptography to measure the number
-	of isogenies; this is used in \cite[\S11.2]{Koblitz2011781}
-	for an example.
+	of isogenies; for example, see \cite[\S11.2]{Koblitz2011781}.
 \end{remark}
 
 We define the number field $\Q(i)$ and compute its
