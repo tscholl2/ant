@@ -114,6 +114,38 @@ $$
 \end{remark}
 
 \begin{exercise}
+	Let $\vphi:R\to S$ be a homomorphism of (commutative) rings.
+	\begin{enumerate}
+		\item Prove that if $I\subset S$ is an ideal, then $\vphi^{-1}(I)$
+		is an ideal of~$R$.
+		\item Prove moreover that if $I$ is prime, then $\vphi^{-1}(I)$ is
+		also prime.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Let $\O_K$ be the ring of integers of a number field.
+	The \defn{Zariski topology} on the set $X=\Spec(\O_K)$ of all prime ideals
+	of $\O_K$ has closed sets the sets of the form
+	$$
+		V(I) = \{ \p\in X : \p \mid I\},
+	$$
+	where~$I$ varies through {\em all} ideals of $\O_K$, and $\p\mid I$ means
+	that $I \subset \p$.
+	\begin{enumerate}
+		\item\label{exercise:zariski-part-1} Prove that the collection of closed
+		sets of the form $V(I)$ is a topology on $X$.
+		\item Let $Y$ be the subset of nonzero prime ideals of $\O_K$, with the
+		induced topology. Use unique factorization of ideals to prove that the
+		closed subsets of~$Y$ are exactly the finite subsets of~$Y$ along with
+		the set~$Y$.
+		\item Prove that the conclusion of the first part is still true
+		if $\O_K$ is replaced by an order in $\O_K$, i.e., a subring that
+		has finite index in $\O_K$ as a $\Z$-module.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
 	Let $\O_K$ be the ring of integers of a number field $K$,
 	and let $p\in\Z$ be a prime number.  What is the cardinality
 	of $\O_K/(p)$ in terms of $p$ and $[K:\Q]$, 
@@ -137,6 +169,7 @@ $$
 \end{exercise}
 
 \subsection{Examples}
+
 The following \sage session shows the commands needed to compute
 the factorization of $p\O_K$ for~$K$ the number field
 defined by a root of $x^5+7x^4+3x^2-x+1$ and $p=2$ and~$5$.
