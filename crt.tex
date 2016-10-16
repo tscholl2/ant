@@ -84,9 +84,22 @@ is surjective, which proves CRT.
 \subsection{CRT in General}
 Recall that {\em all rings in this book are commutative with unity}.
 Let $R$ be such a ring.
+
 \begin{definition}[Coprime]
-Ideals $I$ and $J$ of $R$ are \defn{coprime} if $I+J=(1)$.
+	Ideals $I$ and $J$ of $R$ are \defn{coprime} if $I+J=(1)$.
 \end{definition}
+
+\begin{exercise}
+	Let $a_1 = 1+i$, $a_2 = 3+2i$, and $a_3 = 3+4i$ as elements of $\Z[i]$.
+	\begin{enumerate}
+		\item Prove that the ideals $I_1=(a_1)$, $I_2=(a_2)$, and $I_3=(a_3)$
+		are coprime in pairs.
+		\item Compute the cardinality of $\Z[i]/(I_1 I_2 I_3)$.
+		\item Find a single element in $\Z[i]$ that is congruent to~$n$
+		modulo $I_n$, for each $n\leq 3$.
+	\end{enumerate}
+\end{exercise}
+
 For example, if~$I$ and~$J$ are nonzero ideals in a Dedekind domain,
 then they are coprime precisely when the prime ideals that appear in
 their two (unique) factorizations are disjoint.
