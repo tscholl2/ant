@@ -156,7 +156,7 @@ Let $L/K$ be an extension of number fields and let $\p$ be a prime
 in $\O_K$. By Theorem~\ref{thm:intuniqfac} the ideal $\p\O_L$ factors
 uniquely into a product of primes of $\O_L$ given by
 $$
-	\p\O_L = \prod_{i=1}^g \q^{e_i}_i,
+	\p\O_L = \prod_{i=1}^g \P^{e_i}_i,
 $$
 where the $\q_i$ are the prime ideals of $\O_L$ laying over $\p$, and
 the $e_i$ are positive integers. The goal of this section is to study this
@@ -165,15 +165,15 @@ factorization. First we will introduce some standard terminology.
 \begin{definition}[Ramification Index]
 	The \defn{ramification index} of $\q_i$ over $\p$ is
 	$$
-		e(\q_i/\p) = e_i.
+		e(\P_i/\p) = e_i.
 	$$
 \end{definition}
 
 \begin{definition}[Inertia degree]
 	The \defn{inertia degree}
-	of $\q_i$ over $\p$ is
+	of $\P_i$ over $\p$ is
 	$$
-		f(\q_i/\p) = \left[\O_L/\q_i : \O_K/\p\right].
+		f(\P_i/\p) = \left[\O_L/\P_i : \O_K/\p\right].
 	$$
 \end{definition}
 
@@ -185,10 +185,10 @@ factorization. First we will introduce some standard terminology.
 	\begin{enumerate}
 		\item[(a)] Show that $e(\P/\p)=e(\P/\q) \cdot e(\q/\p)$.
 		
-		\item[(b)] Show that $f(\p/p)=f(\P/\q) \cdot f(\q/\p)$.
+		\item[(b)] Show that $f(\P/\p)=f(\P/\q) \cdot f(\q/\p)$.
 		
-		\item[(c)] Let $g_{L/K}(\p)$ be the number of primes
-		of $\O_L$ lying over $\p$. Show that
+		\item[(c)] Let $g_{L/K}(\p)$, $g_{M/K}(\p)$ be the number of primes
+		of $\O_L$, $\O_M$ lying over $\p$ respectively. Show that
 		$$
 			g_{M/K}(\p) = \sum\limits_{\q \text{ divides } \p\O_L} g_{L/K}(\q).
 		$$
@@ -196,13 +196,13 @@ factorization. First we will introduce some standard terminology.
 \end{exercise}
 
 
-Now suppose $L/K$ is Galois and let $\sigma\in\Gal(L/K)$.
+Now suppose that $L/K$ is Galois and let $\sigma\in\Gal(L/K)$.
 We saw in Exercise~\ref{ex:galois-action-on-things} that $\Gal(L/K)$ acts
 naturally on the set $S_\p$ for a prime $\p$ of $\O_K$.
-This means that $\sigma(\q) \in S_\p$ for any $\q \in S_\p$. Moreover,
-$\sigma$ induces an isomorphism of finite fields $\O_L/\q\to \O_L/\sigma(\q)$
-that fixes the common subfield $\O_K/\p$. Thus $\q$ and $\sigma(\q)$ have
-the same inertia degree, i.e. $f(\q/\p) = f(\sigma(\q)/\p)$.
+This means that $\sigma(\P) \in S_\p$ for any $\P \in S_\p$. Moreover,
+$\sigma$ induces an isomorphism of finite fields $\O_L/\P\to \O_L/\sigma(\P)$
+that fixes the common subfield $\O_K/\p$. Thus $\P$ and $\sigma(\P)$ have
+the same inertia degree, i.e. $f(\P/\p) = f(\sigma(\P)/\p)$.
 In fact, much more is true.
 
 
@@ -211,8 +211,8 @@ In fact, much more is true.
 \begin{theorem}\label{thm:transitive}\ithm{transitive Galois action}
 	Suppose $L/K$ is a Galois extension of number fields,
 	and let $\p$ be a prime of $\O_K$. 
-	Write $\p\O_K = \prod_{i=1}^g \q_i^{e_i}$, and let $f_i = f(\q_i/\p)$.
-	Then $G = \Gal(L/K)$ acts transitively on the set $S_\p$ of primes $\q_i$,
+	Write $\p\O_K = \prod_{i=1}^g \P_i^{e_i}$, and let $f_i = f(\P_i/\p)$.
+	Then $G = \Gal(L/K)$ acts transitively on the set $S_\p$ of primes $\P_i$,
 	and
 	$$
 		e_1 = \cdots = e_g, \qquad f_1 = \cdots = f_g.
@@ -374,11 +374,11 @@ of a prime in an extension. This section will define these
 terms which will be used in later sections.
 
 Let $L/K$ be an extension of number fields of degree $n$,
-and let $\p$ be a prime in $\O_K$. We have the usual factorization
+and let $\p$ be a prime in $\O_K$. Then $\p$ factors in $\O_L$ as
 $$
-	\p\O_L = \prod_{i=1}^g \q_i^{e_i}
+	\p\O_L = \prod_{i=1}^g \P_i^{e_i}
 $$
-where the $\q_i$ ranger over the primes of $\O_L$ laying over $\p$.
+where the $\P_i$ ranger over the primes of $\O_L$ laying over $\p$.
 
 \begin{definition}\label{def:ramify}
 	The prime $\p$ \emph{ramifies} in $L$ if $e_i > 1$ for some $1\leq i\leq g$.
@@ -410,8 +410,8 @@ where the $\q_i$ ranger over the primes of $\O_L$ laying over $\p$.
 \end{exercise}
 
 \begin{exercise}
-	Let $K$ be a number field and $d_K$ the discriminant of $K$.
-	Prove that $p\mid d_K$ if and only if $p$ ramifies in $K$.
+	Let $K$ be a number field and $d_K$ the discriminant of $K$
+	Prove that a prime $p$ divides $d_K$ if and only if $p$ ramifies in $K$.
 
 	\begin{hint}
 		This is proved in many books, see for example
@@ -568,7 +568,7 @@ and the number of primes at each step of the tower.
 		\hline
 		 &  &  & \p & K \\
 		e(\p/p) & f(\p/p) & 1 & \vert & \vert \\
-		 &  &  & \q & L \\
+		 &  &  & \q & K^D \\
 		1 & 1 & [K^D : \Q] & \vert & \vert \\
 		 &  &  & p &  \Q
 	\end{tabular}
@@ -771,6 +771,7 @@ We have the following characterization of $I_\p$.
 
 The following diagram is mean to help summarize the relationship between $I,D$,
 and the splitting of $p$ in $K$.
+%TODO
 $$
 	\begin{tikzcd}
 		K \\
