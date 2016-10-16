@@ -385,22 +385,30 @@ which finishes the proof of Theorem~\ref{thm:units}.
 \end{proof}
 
 \section{Examples with Sage}
+
+
 \subsection{Pell's Equation}\label{sec:pell}
 The so-called ``Pell's equation'' is $x^2-dy^2 = 1$ with $d>0$ square
 free, and we seek integer solutions $x,y$ to this equation.  If
 $x+y\sqrt{d}\in K = \Q(\sqrt{d})$, then
 $$
-  \Norm(x+y\sqrt{d}) = (x+y\sqrt{d})(x-y\sqrt{d}) = x^2 -dy^2.
+	\Norm(x+y\sqrt{d}) = (x+y\sqrt{d})(x-y\sqrt{d}) = x^2 -dy^2.
 $$
 Thus if $(x,y)$ are integers such that $x^2 - d y^2 = 1$, then $\alpha
 = x + \sqrt{d}y \in \O_K$ has norm $1$, so by
-Proposition~\ref{prop:unitnorm} we have $\alpha \in U_K$.  The integer
-solutions to Pell's equation thus form a finite-index subgroup of the
-group of units in the ring of integers of $\Q(\sqrt{d})$.  Dirichlet's
-unit theorem implies that for any~$d$ the solutions to Pell's equation
-with $x,y$ not both negative forms an infinite cyclic group, which is %TODO why is it cyclic?
-a fact that takes substantial work to prove using only elementary
-number theory (for example, using continued fractions).
+Proposition~\ref{prop:unitnorm} we have $\alpha \in U_K$.
+
+\begin{exercise}
+	Use Dirichlet's unit theorem to show that the solutions to Pell's equation
+	form a finite-index subgroup of the group of units of $\Q(\sqrt{d})$.
+	Then show that the solutions with $x,y$ not both negative form an
+	infinite cyclic group.
+\end{exercise}
+
+\begin{remark}
+	The previous exercise takes substantial work to prove using only elementary
+	number theory (for example, using continued fractions).
+\end{remark}
 
 We first solve Pell's equation $x^2 - 5y^2 = 1$ with $d=5$ by finding
 the units of the ring of integers of $\Q(\sqrt{5})$ using Sage.
@@ -463,8 +471,9 @@ We can also list the coefficients for these powers as follows.
 \end{remark}
 
 The simplest solutions to Pell's equation can be huge, even when~$d$
-is quite small.  Read Lenstra's paper for some examples from
-over two thousand years ago.  Here is one example for $d=10000019$.
+is quite small. Read Lenstra's paper (cited in the above remark)
+for some examples from over two thousand years ago.
+Here is one example for $d=10000019$.
 
 \begin{sagecode}
 \begin{sagecell}
