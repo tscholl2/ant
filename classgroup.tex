@@ -55,7 +55,7 @@ $$
 	M_K = \left(\frac{4}{\pi}\right)^s\frac{n!}{n^n} \cdot \sqrt{|d_K|}
 $$
 is called the \defn{Minkowski bound}.
-There are other better bounds, but they depend on unproven conjectures.
+There are other better bounds, but they depend on unproven conjectures. %TODO add citation
 
 The following two examples illustrate how to apply
 Theorem~\ref{thm:finiteclassgrp} to compute $C_K$ in simple cases.
@@ -251,7 +251,7 @@ Let $\sigma:K \to V=\R^n$ be the embedding
 	\Im(\sigma_{r+1}(x)), \ldots, \Im(\sigma_{r+s}(x))\big),
 \end{align*}
 \begin{warning}
-	Note that this $\sigma$ is {\em not} the same as the one
+	This $\sigma$ is {\em not} the same as the one
 	at the beginning of Section~\ref{sec:disc} if $s>0$.
 \end{warning}
 \begin{lemma}\label{lem:volok}\ilem{volume of rings of integers}
@@ -331,7 +331,9 @@ Let $\sigma:K \to V=\R^n$ be the embedding
 	and let $f:V\to \R$ be the function defined by
 	$$
 		f(x_1,\ldots, x_n)
-		= |x_1\cdots x_r\cdot (x_{r+1}^2 + x_{(r+1)+s}^2)\cdots (x_{r+s}^2 + x_n^2)|.
+		= \left|
+		x_1 \cdots x_r\cdot (x_{r+1}^2 + x_{(r+1)+s}^2)\cdots (x_{r+s}^2 + x_n^2)
+		\right|.
 	$$
 	Notice that if $x\in K$ then $f(\sigma(x)) = |\Norm_{K/\Q}(x)|$,
 	and for any $a\in \R$,
@@ -390,24 +392,66 @@ Let $\sigma:K \to V=\R^n$ be the embedding
 \end{proof}
 
 \begin{exercise}\label{ex:canchooseSright}
-	Show that in the proof of Theorem~\ref{thm:finiteclassgrp},
-	$S$ can be chosen so that the final bound matches the statement
-	of the theorem. This means $S$ can be chosen so that
+	Prove that the quantity $C_{r,s}$ in Theorem~\ref{thm:finiteclassgrp}
+	can be taken to be $\left(\frac{4}{\pi}\right)^{s} \frac{n!}{n^n}$,
+	as follows (adapted from \cite[pg.~19]{sd:brief}):
+	Let $S$ be the set of elements $(x_1,\ldots, x_{n})\in\R^n$ such that
 	$$
-		\Norm(aI)
-		\leq
-		\left(\frac{4}{\pi}\right)^s \frac{n!}{n^n}\sqrt{\left|d_K\right|}.
+		|x_1| + \cdots |x_{r}| +
+		2 \sum_{v=r+1}^{r+s} \sqrt{x_v^2 + x_{v+s}^2} \leq 1.
 	$$
-	\begin{hint}
-		Consider the subset $S$ of $\R^n$ defined by
+	\begin{enumerate}
+		\item Prove that $S$ is convex and that $M=n^{-n}$, where 
 		$$
-			|x_1| + \cdots + |x_r| + 2\left(\sqrt{
-			x_{r+1}^2+x_{(r+1)+s}^2} + \cdots + \sqrt{
-			x_{r+s}^2+x_{(r+s)+s}^2}\right) \leq 1.
+			M = \max\left\{
+			\left|x_1 \cdots x_r
+			\cdot (x_{r+1}^2 + x_{(r+1)+s}^2) \cdots (x_{r+s}^2 + x_n^2)\right|
+			\colon (x_1,\ldots, x_n) \in S
+			\right\}.
 		$$
-		Suppose $a\in\O_K$ such that $\sigma(a)\in S$.
-		What can you say about $\Norm_{K/\Q}(a)$? What is $\Vol(S)$?
-	\end{hint}
+
+		\begin{hint}
+			For convexity, use the triangle inequality and that for
+			$0\leq \lambda \leq 1$, we have
+			\begin{align*}
+				\lambda\sqrt{x_1^2 + y_1^2} &+ (1-\lambda)\sqrt{x_2^2+y_2^2} \\
+				&\geq\sqrt{(\lambda x_1 + (1 - \lambda)x_2)^2
+				+ (\lambda y_1 + (1 - \lambda)y_2)^2}
+			\end{align*}
+			for $0\leq \lambda \leq 1$.  In polar coordinates this last inequality
+			is 
+			$$
+				\lambda r_1 + (1-\lambda)r_2 \geq  \sqrt{
+				\lambda^2 r_1^2
+				+ 2\lambda(1 - \lambda) r_1 r_2 \cos(\theta_1 - \theta_2)
+				+ (1 - \lambda)^2 r_2^2
+				},
+			$$
+			which is trivial.  That $M\leq n^{-n}$ follows from the inequality
+			between the arithmetic and geometric means.
+		\end{hint}
+		\item Transforming pairs $x_v, x_{v+s}$ from Cartesian to polar coordinates,
+		show also that $\Vol(S) = 2^{r}(2\pi)^s D_{r,s}(1)$, where
+		$$
+			D_{\ell,m}(t) = \int \cdots \int_{\mathcal{R}_{\ell,m}(t)}
+			y_1 \cdots y_m dx_1 \cdots dx_{\ell} dy_1 \cdots dy_m
+		$$
+		and 
+		$\mathcal{R}_{\ell,m}(t)$ is given by $x_{\rho}\geq 0$
+		($1\leq \rho\leq \ell$), $y_{\rho}\geq 0$ ($1\leq \rho\leq m$) and 
+		$$
+			x_1 + \cdots + x_{\ell} + 2(y_1+\cdots +y_m) \leq t.
+		$$
+		\item Prove that
+		$$
+			D_{\ell,m}(t) = \int_{0}^t D_{\ell-1,m}(t-x)dx
+			= \int_{0}^{t/2} D_{\ell,m-1}(t-2y)y dy
+		$$
+		and deduce by induction that 
+		$$
+			D_{\ell,m}(t) = \frac{4^{-m}t^{\ell+2m}}{(\ell+2m)!}
+		$$
+	\end{enumerate}
 \end{exercise}
 
 \begin{corollary}\icor{discrimant of number field $>1$}\label{co:disc>1}
