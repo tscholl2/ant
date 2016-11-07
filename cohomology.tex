@@ -324,13 +324,13 @@ trivial~$G$ module.  By definition we have
 $\H^0(G,\Z) = \Z$ and $\H^0(G,\Z/m\Z)=\Z/m\Z$.
 The long exact sequence begins
 $$
-\begin{tikzcd}
-	0 \rar & \Z \rar{m} & \Z \rar & \Z/m\Z \ar[out=-20, in=160]{dll}
-	\\
-	& \H^1(G,\Z) \rar{[m]} & \H^1(G,\Z) \rar & \H^1(G,\Z/m\Z) \ar[out=-20, in=160]{dll}
-	\\
-	& \H^2(G,\Z) \rar{[m]} & \H^2(G,\Z) \rar & \H^2(G,\Z/m\Z) \rar & \cdots
-\end{tikzcd}
+	\begin{tikzcd}
+		0 \rar & \Z \rar{m} & \Z \rar & \Z/m\Z \ar[out=-20, in=160]{dll}
+		\\
+		& \H^1(G,\Z) \rar{[m]} & \H^1(G,\Z) \rar & \H^1(G,\Z/m\Z) \ar[out=-20, in=160]{dll}
+		\\
+		& \H^2(G,\Z) \rar{[m]} & \H^2(G,\Z) \rar & \H^2(G,\Z/m\Z) \rar & \cdots
+	\end{tikzcd}
 $$
 From the first few terms of the sequence and the fact
 that $\Z$ surjects onto $\Z/m\Z$, we see that
@@ -339,7 +339,7 @@ This is consistent with Exercise~\ref{ex:H1hom} above that
 showed $\H^1(G,\Z) = 0$. Using this vanishing and the right side
 of the exact sequence we obtain an isomorphism
 $$
-\H^1(G,\Z/m\Z) \isom \H^2(G,\Z)[m]
+	\H^1(G,\Z/m\Z) \isom \H^2(G,\Z)[m]
 $$
 where $\H^2(G,\Z)[m]$ is the kernel of the map
 $[m]:\H^2(G,\Z) \to \H^2(G,\Z)$.
@@ -349,13 +349,11 @@ is $\Hom$, so
 	\H^2(G,\Z)[m] \isom \Hom(G,\Z/m\Z).
 \end{equation}
 One can prove that for any $n>0$ and any module~$A$ that the group
-$\H^n(G,A)$ has exponent dividing $\#G$ (see Remark~\ref{rmk:cores}).
-Thus (\ref{eqn:h2}) allows
-us to understand $\H^2(G,\Z)$, and this comprehension arose
-naturally from the properties in Theorem~\ref{thm:cohomology}
-that determine the cohomology groups $\H^n$.
-
-
+$\H^n(G,A)$ has exponent dividing $\#G$ (see Remark~\ref{rmk:cores}
+and Exercise~\ref{ex:finite-cohomology-exponent}).
+Thus (\ref{eqn:h2}) allows us to understand $\H^2(G,\Z)$,
+and this comprehension arose naturally from the properties in 
+Theorem~\ref{thm:cohomology} that determine the cohomology groups $\H^n$.
 
 \section{Inflation and Restriction}
 
@@ -497,10 +495,19 @@ Multiplicative Abelian group isomorphic to C3
 	for each~$n$.  For $n=0$ this is the trace map
 	$a\mapsto \sum_{\sigma \in G/H} \sigma a$, but the
 	definition for $n\geq 1$ is more involved. One has
-	$\cores_H \circ \res_H = [\#(G/H)]$. Taking $H=1$ this
-	implies that for each $n\geq 1$ the group
-	$\H^n(G,A)$ is annihilated by $[\#G]$.
+	$\cores_H \circ \res_H = [\#(G/H)]$.
+	%	Taking $H=1$ this
+	%	implies that for each $n\geq 1$ the group
+	%	$\H^n(G,A)$ is annihilated by $[\#G]$.
 \end{remark}
+
+\begin{exercise}\label{ex:finite-cohomology-exponent}
+	Suppose $G$ is a finite group and $A$ is a finite $G$-module.
+	Prove that for any~$n$, the group $\H^n(G,A)$ is a torsion abelian group of
+	exponent dividing the order $\#A$ of~$A$.
+	
+	% solution: use previous remark with H = 1.
+\end{exercise}
 
 \section{Galois Cohomology}
 
@@ -598,7 +605,7 @@ $$
 $$
 where $E$ is an elliptic curve over~$\Q$. Can you identify the
 action for each module $A$? What about $A(L)$ for any finite
-Galois extension $L/\Q$. It is important to notice that
+Galois extension $L/\Q$? It is important to notice that
 $\Qbar^*(L) = L^*$.
 \end{example}
 
@@ -641,6 +648,20 @@ $\Qbar^*(L) = L^*$.
 	$f = f_{b^{-1}}$ in the notation we used to define
 	coboundaries above.
 \end{proof}
+
+\begin{exercise}
+	Let $K=\Q(\sqrt{5})$ and let $A=U_K$ be the group of units of
+	$K$, which is a module over the group $G=\Gal(K/\Q)$.  Compute the
+	cohomology groups $\H^0(G,A)$ and $\H^1(G,A)$.  (You shouldn't use
+	a computer, except maybe to determine $U_K$.)
+\end{exercise}
+
+\begin{exercise}
+	Let $K=\Q(\sqrt{-23})$ and let~$C$ be the class group of
+	$\Q(\sqrt{-23})$, which is a module over the Galois group $G=\Gal(K/\Q)$. 
+	Determine $\H^0(G,C)$ and $\H^1(G,C)$.
+\end{exercise}
+
 
 %%% Local Variables:
 %%% mode: latex
