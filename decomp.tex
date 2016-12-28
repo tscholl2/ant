@@ -769,36 +769,68 @@ We have the following characterization of $I_\p$.
 	\end{enumerate}
 \end{exercise}
 
-The following diagram is mean to help summarize the relationship between $I,D$,
-and the splitting of $p$ in $K$.
-%TODO
-$$
-	\begin{tikzcd}
-		K \\
-		K^I \\
-		K^D \\
-		\Q
-	\end{tikzcd}
-$$
-[TODO]
-%TODO
-%\begin{figure}\label{fig}
-%\includegraphics[width=\textwidth]{splitting}
-%\caption{The Splitting of Behavior of a Prime in a Galois Extension}
-%\end{figure}
-%\begin{figure}
-%	\centering
-%	\begin{tikzpicture}
-%		\node (Q) {$\Q$};
-%		\node (KD) [above of=Q] {$K^D$};
-%		\node (KI) [above of=KD] {$K^L$};
-%		\node (K) [above of=KI] {$K$};
-%		
-%		\path[draw] (Q) edge[out=-210,in=-180] node [left] {$l_A$} (KD);
-%	\end{tikzpicture}
-%	\caption{Splitting of $p$ in a Galois extension $K/\Q$.}
-%	\label{fig:splitting-of-p}
-%\end{figure}
+Figure~\ref{fig:splitting-of-p} summarizes the relationship between $I,D$,
+and the splitting of $p$ in $K$. The dots on the left represent primes
+lying over $p$. The size of the dot represents the inertia degree.
+Compare this with Table~\ref{tbl:decompfield}.
+\begin{figure}
+	\centering
+	\begin{tikzpicture}[scale = 1.5]
+		\node at (1,0) (Q) {$\Q$};
+		\node at (1,2) (K^D) {$K^D$};
+		\node at (1,4) (K^I) {$K^I$};
+		\node at (1,6) (K) {$K$};
+
+		\draw (K) -- (K^I) node[right,midway]{$e$};
+		\draw (K^I) -- (K^D) node[right,midway]{$f$};
+		\draw (K^D) -- (Q) node[right,midway]{$g$};
+
+		\node at (3,5) (I) {$I$};
+		\node at (3,3) (D/I) {$D/I \cong \Gal(K^I/K^D)$};
+		\node at (0,4) (D) {$D$};
+
+		\draw (K^D) to [out=-180,in=-90](D);
+		\draw (D) to [out=90,in=180](K);
+
+		\draw (K^D) to [out=0,in=-90](D/I);
+		\draw (D/I) to [out=90,in=0](K^I);
+
+		\draw (K^I) to [out=0,in=-90](I);
+		\draw (I) to [out=90,in=0](K);
+
+		\node[draw] at (5,5) (K^I-Qefg) {$f = g = 1$};
+		\node[draw] at (5,3) (K^D-K^Iefg) {$e = g = 1$};
+		\node[draw] at (5,1) (QK^Defg) {$e = f = 1$};
+
+		\node at (-2,0) (p) {$p$};
+
+		\node at (-2.5,2) (q1) {\huge$\boldsymbol{\cdot}$};
+		\node at (-2.0,2) (q2) {\huge$\boldsymbol{\cdot}$};
+		\node at (-1.5,2) (q3) {\huge$\boldsymbol{\cdot}$};
+
+		\draw (p) -- (q1);
+		\draw (p) -- (q2);
+		\draw (p) -- (q3);
+
+		\node at (-2.5,4) (P1) {\large$\bullet$};
+		\node at (-2.0,4) (P2) {\large$\bullet$};
+		\node at (-1.5,4) (P3) {\large$\bullet$};
+
+		\draw (q1) -- (P1);
+		\draw (q2) -- (P2);
+		\draw (q3) -- (P3);
+
+		\node at (-2.5,6) (Q1) {\large$\bullet^{\text{\large $e$}}$\!\!\!\!};
+		\node at (-2.0,6) (Q2) {\large$\bullet^{\text{\large $e$}}$\!\!\!\!};
+		\node at (-1.5,6) (Q3) {\large$\bullet^{\text{\large $e$}}$\!\!\!\!};
+
+		\draw (P1) -- (Q1);
+		\draw (P2) -- (Q2);
+		\draw (P3) -- (Q3);
+	\end{tikzpicture}
+	\caption{Splitting of $p$ in a Galois extension $K/\Q$.}
+	\label{fig:splitting-of-p}
+\end{figure}
 
 
 \section{Frobenius Elements}
