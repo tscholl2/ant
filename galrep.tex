@@ -72,7 +72,7 @@ Elliptic Curve defined by y^2 = x^3 + x over
 \end{sageout}
 \end{sagecode}
 \begin{sagecode}
-\begin{sagecell}
+\begin{sagecell} %skip
 E.plot(pointsize=60, gridlines=True)
 \end{sagecell}
 \begin{sageout}[escapechar=!]
@@ -80,7 +80,7 @@ E.plot(pointsize=60, gridlines=True)
 \end{sageout}
 \end{sagecode}
 
-\begin{sagecode} %skip
+\begin{sagecode}
 \begin{sagecell}
 E = EllipticCurve([1,0])
 E
@@ -91,7 +91,7 @@ Elliptic Curve defined by y^2 = x^3 + x over
 \end{sageout}
 \end{sagecode}
 \begin{sagecode}
-\begin{sagecell}
+\begin{sagecell} %skip
 E.plot()
 \end{sagecell}
 \begin{sageout}[escapechar=!]
@@ -146,10 +146,9 @@ E(0,2) + E(1,0)
 \begin{sageout}
 (3 : 4 : 1)
 \end{sageout}
-\end{sagecode}
+\end{sagecode} %link
 \begin{sagecode}
 \begin{sagecell} %skip
-
 G = E.plot()
 G += points ([(0,2) , (1,0) , (3,4) , (3,-4)],
     pointsize=90 , color='red', zorder=10)
@@ -166,7 +165,7 @@ G.show()
 Iterating the group operation often leads quickly to
 very complicated points:
 
-\begin{sagecode} %link
+\begin{sagecode}
 \begin{sagecell}
 7*E(0,2)
 \end{sagecell}
@@ -501,7 +500,7 @@ R.<x> = QQ[]; R
 Univariate Polynomial Ring in x over Rational Field
 \end{sageout}
 \end{sagecode} %link
-\begin{sagecode} %link
+\begin{sagecode}
 \begin{sagecell}
 f = x^3 + x + 1
 K.<a> = NumberField(f)
@@ -512,7 +511,7 @@ Number Field in b with defining polynomial
     x^6 + 6*x^4 + 9*x^2 + 31
 \end{sageout}
 \end{sagecode} %link
-\begin{sagecode} %link
+\begin{sagecode}
 \begin{sagecell}
 F = E.change_ring(M)
 T = F.torsion_subgroup(); T
@@ -524,7 +523,7 @@ Torsion Subgroup isomorphic to Z/2 + Z/2 associated
     x^6 + 6*x^4 + 9*x^2 + 31
 \end{sageout}
 \end{sagecode} %link
-\begin{sagecode} %link
+\begin{sagecode}
 \begin{sagecell}
 T.gens()
 \end{sagecell}
