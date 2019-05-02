@@ -43,6 +43,7 @@
 \DeclareMathOperator{\Spec}{Spec}
 \DeclareMathOperator{\Tor}{Tor}
 \DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\lcm}{lcm}
 
 \newcommand{\Sage}{\texttt{Sage}}
 
@@ -90,16 +91,17 @@
 \author{William Stein}
 
 \begin{document}
-%\maketitle
+\maketitle
 %\tableofcontents
 
-%\frontmatter
-\include{ch0.tex}
-%\mainmatter
-%\include{ch1.tex}
-%\input{ch2.tex}
-%\input{ch3.tex}
-%\input{ch4.tex}
+\frontmatter
+%\include{ch0}
+\mainmatter
+%\include{ch1}
+\include{ch2}
+%\include{ch3}
+%\include{ch4}
+%\include{ch5} % CRT
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% CRT
@@ -133,13 +135,9 @@
 %% WEAKMW
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% BACKMATTER
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%\printindex
-
-%\bibliographystyle{amsalpha}
-%\bibliography{biblio}
+\backmatter
+\printindex
+\bibliographystyle{amsalpha}
+\bibliography{biblio}
 
 \end{document}
