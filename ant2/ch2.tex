@@ -157,11 +157,11 @@ We will see in the proof of Theorem~\ref{thm:struc} that
 $A'$ is uniquely determined by $A$.
 An example of a matrix in Smith normal form is
 $$
-  A=\left(\begin{matrix}
-    2&0&0&0\\
-    0&6&0&0\\
-    0&0&0&0
-  \end{matrix}\right).
+  A=\begin{pmatrix}
+    2 & 0 & 0 & 0 \\
+    0 & 6 & 0 & 0 \\
+    0 & 0 & 0 & 0
+  \end{pmatrix}.
 $$
 
 \begin{proof}[Proof of Proposition~\ref{prop:smith}]
@@ -229,12 +229,12 @@ inductively proves the proposition.
 \end{proof}
 
 \begin{example}
-The matrix $\begin{matrix} -2 & 2 \\ -3 & 4 \end{matrix}$ has Smith normal form
-$\begin{matrix} 1 & 0 \\ 0 & 2 \end{matrix}$,
+The matrix $\begin{pmatrix} -2 & 2 \\ -3 & 4 \end{pmatrix}$ has Smith normal form
+$\begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix}$,
 and the matrix
-$\begin{matrix} 1 & 4 & 9 \\ 16 & 25 & 36 \\ 49 & 64 & 81 \end{matrix}$
+$\begin{pmatrix} 1 & 4 & 9 \\ 16 & 25 & 36 \\ 49 & 64 & 81 \end{pmatrix}$
 has Smith normal form
-$\begin{matrix} 1 & 0 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 72 \end{matrix}$.
+$\begin{pmatrix} 1 & 0 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 72 \end{pmatrix}$.
 As a double check, note that the determinants of a matrix and its
 Smith normal form match, up to sign. This is because
 $$\det(PAQ) = \det(P)\det(A)\det(Q) = \pm \det(A).$$
@@ -376,16 +376,23 @@ M = matrix(R, 3, [1,2,3,0,1+i,2,0,1,5]); show(M)
 \end{exercise}
 
 \begin{exercise}
-  Let $A=\left(
-          \begin{matrix}1&2&3\\4&5&6\\7&8&9
-          \end{matrix}\right)$.
+  Let $A=\begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{pmatrix}$.
   \begin{enumerate}
-  \item Find the Smith normal form of $A$.
-  \item Prove that
+  \item[(a)] Find the Smith normal form of $A$.
+  \item[(b)] Prove that
   the cokernel of the map $\ZZ^3\to \ZZ^3$ given by multiplication by~$A$
   is isomorphic to $\ZZ/3\ZZ \oplus \ZZ$.
   \end{enumerate}
 \end{exercise}
+%\begin{solution}
+% \begin{enumerate}
+% \item[(a)]
+% The Smith normal form of $A$ is
+% $\begin{pmatrix} 1 & 0 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 0 \end{pmatrix}$.
+% \item[(b)]
+% The cokernel is $\ZZ/1\ZZ \times \ZZ/3\ZZ \times \ZZ/0\ZZ$.
+% \end{enumerate}
+%\end{solution}
 
 \section{Noetherian Rings and Modules}\label{sec:noetherian}
 

@@ -373,16 +373,99 @@ Suppose $v\in \ZZ^n$ corresponds to $1\in\ZZ^n$.
 Then finding $x,y$ such that $x+y=1$ is equivalent to
 finding a solution $z\in \ZZ^n$ to the matrix equation
 $Az = v$. This latter linear algebra problem
-can be solved using Hermite normal form
+can be solved using  \index{Smith normal form} or \index{Hermite normal form}
 (see \cite[\S4.7.1]{cohen:course_ant}),
 which is a generalization over $\ZZ$
 of reduced row echelon form.
 
-%We next describe how to use \magma{} and PARI to do CRT computations.
+Next we give an explicit example of a CRT computation using {\Sage}. Let $K = \QQ(\sqrt{-1})$ and $R = \sO_K$. We will set $I = (1 + i)$ and $J = (3)$.
+\begin{sagecode}
+\begin{sagecell}
+K.<i> = QuadraticField(-1)
+d = K.degree()
+I = K.ideal(1 + i)
+J = K.ideal(3)
+\end{sagecell}
+\end{sagecode} %link
+
+Number fields in {\Sage} come with a $\QQ$-vector space isomorphism $K \to \QQ^d$,
+where $d = \deg K$.
+To turn an element $\alpha \in K$ into a vector, we use the {\tt vector()} method.
+We can build the matrix $A$ described above as follows.
+\begin{sagecode} %link
+\begin{sagecell}
+rows = [x.vector() for x in I.basis() + J.basis()]
+A = Matrix(ZZ,rows).transpose()
+\end{sagecell}
+\end{sagecode} %link
+Next we compute the Smith normal form $S$ of $A$,
+along with matrices $T,U$ such that $S = TAU$.
+\begin{sagecode} %link
+\begin{sagecell}
+S,T,U = A.smith_form(transformation=True)
+\end{sagecell}
+\end{sagecode} %link
+
+We have the following chain of $\ZZ$-linear maps
+$$
+	\ZZ^{2d} \xrightarrow{U} \ZZ^{2d} \xrightarrow{A} \ZZ^d \xrightarrow{T} \ZZ^d.
+$$
+The matrix $S$ represents the composition.
+The cokernel of matrix $A$ is trivial since $\sO_K/(I + J) = 0$.
+Therefore $S$ is of the form $\begin{pmatrix} I_d & 0 \end{pmatrix}$
+(see Section~\ref{sec:fg}).
+In particular, $SS^t = I_d$\todo{check transpose syntax}.
+So we can find a solution to $Az = v$ for any $v \in \ZZ^d$
+by computing $z = US^tTv$. Then $Az = AUS^tTv = T^{-1}SU^{-1}US^tTv = v$.
+
+Next we find the solution $z$ for the equation $Az = v$
+where the vector $v$ is the vector corresponding to $1$.
+\begin{sagecode} %link
+\begin{sagecell}
+v = K(1).vector()
+z = T*S.transpose()*U*K(1)
+\end{sagecell}
+\end{sagecode} %link
+Recall that the first half of the columns of $A$ represent a basis for $I$,
+and the second half represents a basis for $J$.
+Using the entries of {\tt z} as coefficients, we can find elements
+$x \in I$ and $y \in J$ such that $x + y = 1$.
+\begin{sagecode} %link
+\begin{sagecell}
+x = sum(z[i]*I.basis()[i] for i in range(d))
+y = sum(z[d+i]*J.basis()[i] for i in range(d))
+print x + y
+\end{sagecell}
+\begin{sageout}
+1
+\end{sageout}
+\end{sagecode} %link
+
+Our value of $x$ and $y$ can be used to solve for $a \in \sO_K$ such that
+$a \equiv a_1 \pmod{I}$ and $a \equiv a_2 \pmod{J}$ for any given $a_1,a_2$.
+We demonstrate this with $a_1 = 17 + i$ and $a_2 = 2 + 11i$.
+\begin{sagecode} %link
+\begin{sagecell}
+a1 = 17 + i
+a2 = 2 + 11*i
+a = x*a2 + y*a1
+print (a - a1 in I) and (a - a2 in J)
+\end{sagecell}
+\begin{sageout}
+True
+\end{sageout}
+\end{sagecode}
+
+
+
+\begin{comment}
 
 \subsection{{\Sage}}
+
+%We next describe how to use \magma{} and PARI to do CRT computations.
+
 [[TODO]]
-\begin{comment}
+
 \subsection{\magma{}}
 The \magma{} command {\tt ChineseRemainderTheorem} implements the
 algorithm suggested by Theorem~\ref{thm:crt}.  In the following example,
