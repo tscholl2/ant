@@ -484,7 +484,7 @@ contain many different maximal elements.
 \begin{proof}
   \hfill
   \begin{description}
-    \item[$(1 \Rightarrow 2):$]
+    \item[$(1 \implies 2):$]
       Suppose $M_1\subset M_2\subset \cdots$ is a
       sequence of submodules of $M$.  Then
       $M_\infty=\cup_{n=1}^{\infty} M_n$ is a submodule of $M$.
@@ -496,7 +496,7 @@ contain many different maximal elements.
       $k\geq n$, which proves that the chain of $M_i$ stabilizes,
       so the ascending chain condition holds for~$M$.
 
-    \item[$(2 \Rightarrow 3):$]
+    \item[$(2 \implies 3):$]
       Suppose 3 were false, so there exists
       a nonempty set~$S$ of submodules of~$M$ that does not
       contain a maximal element.  We will use~$S$ to construct
@@ -510,7 +510,7 @@ contain many different maximal elements.
       produce an infinite ascending chain of submodules of $M$,
       which contradicts the ascending chain condition.
 
-    \item[$(3 \Rightarrow 1):$]
+    \item[$(3 \implies 1):$]
       Suppose 1 is false, so there is a submodule $M'$ of~$M$ that
       is not finitely generated.  We will show that the set~$S$ of
       all finitely generated submodules of $M'$ does not
@@ -758,8 +758,19 @@ which provides the missing step in our proof of the structure theorem
 for finitely generated abelian groups.
 
 \begin{exercise}
-  There is another way to show every principle ideal domain (for example $\ZZ$) is noetherian (contrast to the proof in Section~\ref{sec:Znoeth}). Let $R$ be a PID and $(a)$ an arbitrary ideal. Use the facts that $(b)\supseteq(a)$ if and only if $b \mid a$ and $R$ is a UFD to show that ascending chain of ideals starting with $(a)$ must stabilize.
+  There is another way to show every principle ideal domain
+  (for example $\ZZ$) is noetherian (contrast to the proof in
+  Section~\ref{sec:Znoeth}). Let $R$ be a PID and $(a)$ an arbitrary ideal.
+  Use the facts that $(b) \supseteq (a)$ if and only if $b \mid a$ and that $R$
+  is a UFD to show that any ascending chain of ideals starting with $(a)$ must
+  stabilize.
 \end{exercise}
+%\begin{solution}
+%  Write $a = \prod p_i^{e_i}$ for some irreducible elements $p_i$.
+%  Then any ideal $(b) \supseteq (a)$ must be of the form $b = \prod p_i^{d_i}$
+%  with $d_i \leq p_i$ (up to a unit). There are only finitely many such possible
+%  ideals since there is finitely many options for the exponents.
+%\end{solution}
 
 \section{Rings of Algebraic Integers}
 
