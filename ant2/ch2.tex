@@ -141,14 +141,14 @@ trivial to understand.
 \end{proposition}
 
 \begin{example}
-	An example of a matrix in Smith normal form is
-	\[
-		A = \begin{pmatrix}
-		2 & 0 & 0 & 0 \\
-		0 & 6 & 0 & 0 \\
-		0 & 0 & 0 & 0
-		\end{pmatrix}.
-	\]
+  An example of a matrix in Smith normal form is
+  \[
+    A = \begin{pmatrix}
+    2 & 0 & 0 & 0 \\
+    0 & 6 & 0 & 0 \\
+    0 & 0 & 0 & 0
+    \end{pmatrix}.
+  \]
 \end{example}
 
 \begin{remark}
@@ -236,7 +236,9 @@ has Smith normal form
 $\begin{pmatrix} 1 & 0 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 72 \end{pmatrix}$.
 As a double check, note that the determinants of a matrix and its
 Smith normal form match, up to sign. This is because
-$$\det(PAQ) = \det(P)\det(A)\det(Q) = \pm \det(A).$$
+\[
+  \det(PAQ) = \det(P)\det(A)\det(Q) = \pm \det(A).
+\]
 
 We compute each of the above Smith forms using {\Sage},
 along with the corresponding transformation matrices.
@@ -1247,6 +1249,9 @@ This fact is important enough to be stated as a separate theorem.
   From basic definitions, find the rings of integers of the fields
   $\QQ(\sqrt{11})$ and $\QQ(\sqrt{-6})$.
 \end{exercise}
+%\begin{solution}
+%  $\ZZ[\sqrt{11}]$ and $\ZZ[\sqrt{-6}]$.
+%\end{solution}
 
 \begin{definition}[Order]\label{defn:order}
   An \defn{order} in $\sO_K$ is any subring $R$ of $\sO_K$ such that
@@ -1259,6 +1264,22 @@ This fact is important enough to be stated as a separate theorem.
   if and only if $R$ contains a spanning set for $K$ as a vector space
   over $\QQ$.
 \end{exercise}
+%\begin{solution}
+%  Note that $\sO_K/R$ is finite if and only if $\sO_K$ and $R$ have the
+%  same rank as $\ZZ$-modules. Therefore $\dim \sO_K \otimes \QQ = \dim K$
+%  equals $\dim R \otimes \QQ$ if and only if $R$ is an order. Here the
+%  dimension is as a $\QQ$-vector space.
+%\end{solution}
+
+\begin{exercise} % Due to Shahed Sharif
+  Let $K$ be a number field of degree $n$.
+  Suppose $\{\alpha_1,\dots,\alpha_n\}$ is a $\ZZ$-independent set of
+  algebraic integers. Is $\ZZ\alpha_1 + \cdots + \ZZ\alpha_n$ an ideal
+  of $\sO_K$?
+\end{exercise}
+%\begin{solution}
+%  Not always. Consider $\{1,\sqrt(5)\}$ and $K = \QQ(\sqrt{5})$.
+%\end{solution}
 
 As noted above, $\ZZ[i]$ is the ring of integers of $\QQ(i)$.  For every
 nonzero integer~$n$, the subring $\ZZ+ni\ZZ$ of $\ZZ[i]$ is an order.
@@ -1279,13 +1300,6 @@ $\ZZ[i]$ is not an order because it is not a ring.
   elliptic curve cryptography to measure the number
   of isogenies; for example, see \cite[\S11.2]{Koblitz2011781}.
 \end{remark}
-
-\begin{exercise} % Due to Shahed Sharif
-  Let $K$ be a number field of degree $n$. Suppose $\{\alpha_1,\dots,\alpha_n\}$ is a $\ZZ$-independent set of algebraic integers. Is $\ZZ\alpha_1 + \cdots + \ZZ\alpha_n$ an ideal of $\sO_K$?
-  \todo{find a good place for this}
-  % Not always. Consider $\{1,\sqrt(5)\}$ and $K = \QQ(\sqrt{5})$.
-\end{exercise}
-
 
 We define the number field $\QQ(i)$ and compute its
 ring of integers.
