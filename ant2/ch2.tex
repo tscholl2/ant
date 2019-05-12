@@ -140,29 +140,28 @@ trivial to understand.
   $s\geq 0$, $n_i\geq 1$ for all $i$, and $n_1\mid n_2 \mid \cdots \mid n_s$.
 \end{proposition}
 
-\todo{INSERT EXAMPLE}
+\begin{example}
+	An example of a matrix in Smith normal form is
+	\[
+		A = \begin{pmatrix}
+		2 & 0 & 0 & 0 \\
+		0 & 6 & 0 & 0 \\
+		0 & 0 & 0 & 0
+		\end{pmatrix}.
+	\]
+\end{example}
 
 \begin{remark}
   Note that the matrices $P$ and $Q$ are invertible as integer
   matrices, so $\det(P)$ and $\det(Q)$ are $\pm 1$. In particular
-  $\det A' = \pm\det A$.
+  $\det A' = \pm\det A$. We will see in the proof of Theorem~\ref{thm:struc} that
+  $A'$ is uniquely determined by $A$.
 \end{remark}
 
 \begin{definition}
   The matrix $A'$ in Proposition~\ref{prop:smith}
   is called the \defn{Smith normal form} of $A$.
 \end{definition}
-
-We will see in the proof of Theorem~\ref{thm:struc} that
-$A'$ is uniquely determined by $A$.
-An example of a matrix in Smith normal form is
-$$
-  A=\begin{pmatrix}
-    2 & 0 & 0 & 0 \\
-    0 & 6 & 0 & 0 \\
-    0 & 0 & 0 & 0
-  \end{pmatrix}.
-$$
 
 \begin{proof}[Proof of Proposition~\ref{prop:smith}]
 The matrix $P$ will be a product of matrices that define elementary
@@ -523,7 +522,7 @@ contain many different maximal elements.
   \end{description}
 \end{proof}
 
-\begin{definition}
+\begin{definition}[Module Homomorphism]
   A \defn{homomorphism} of $R$-modules $\varphi:M\to N$ is an abelian
   group homomorphism such that for any $r\in R$ and $m\in M$ we have
   $\varphi(rm) = r\varphi(m)$. A sequence
