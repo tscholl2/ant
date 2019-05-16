@@ -899,11 +899,12 @@ The minimal polynomial of $1/2$ is $x-1/2$, and
 the minimal polynomial of $\sqrt[3]{2}$ is $x^3-2$.
 
 \begin{example}
-We compute the minimal polynomial of a number expressed
+\todo{this is confusing, sometimes easier to use numberfield to construct elements rather than typing {\tt (sqrt(2) + 3).minpoly()}}
+We compute the minimal polynomial of $(\sqrt[3]{2})^2 + 3$.
 in terms of $\sqrt[4]{2}$:
 \begin{sagecode}
 \begin{sagecell}
-k.<a> = NumberField(x^4 - 2)
+K.<a> = NumberField(x^4 - 2)
 a^4
 \end{sagecell}
 \begin{sageout}
@@ -922,6 +923,11 @@ x^2 - 6*x + 7
   Find the minimal polynomial of $\sqrt{2} + \sqrt{3}$ by hand.
   Check your result with {\Sage}.
 \end{exercise}
+%\begin{solution}
+%  x^4 - 10x + 1
+% check by showing this is irreducible.
+%\end{solution}
+
 
 \begin{lemma}\label{lem:mindiv}
   Suppose $\alpha \in\overline{\QQ}$.  Then the minimal polynomial of~$\alpha$
@@ -941,6 +947,10 @@ x^2 - 6*x + 7
   Show that the minimal polynomial of an algebraic number
   $\alpha\in\overline{\QQ}$ is unique.
 \end{exercise}
+%\begin{solution}
+% They divide eachother. Then use monic to show equal.
+%\end{solution}
+
 
 \begin{lemma}
   \label{lem:minpolint}\ilem{minimal polynomial of algebraic integer}
@@ -978,10 +988,14 @@ x^2 - 6*x + 7
     $x^4 + 54x + 243$.
   \end{enumerate}
 \end{exercise}
+%\begin{solution}
+% Yes, no, no, yes
+%\end{solution}
 
-\begin{example}
+\begin{example}\todo{make sure this is bold}
 We compute some minimal polynomials in {\Sage}.
 The minimal polynomial of $1/2$:
+\todo{make sure we use big K for number fields}
 \begin{sagecode}
 \begin{sagecell}
 (1/2).minpoly()
@@ -991,7 +1005,7 @@ x - 1/2
 \end{sageout}
 We construct a root $a$ of $x^2-2$ and compute its minimal polynomial:
 \begin{sagecell}
-k.<a> = NumberField(x^2 - 2)
+K.<a> = NumberField(x^2 - 2)
 a^2 - 2
 \end{sagecell}
 \begin{sageout}
@@ -1138,16 +1152,6 @@ $$
 $$
 This is a general method which works well for computers. However it can
 also be done using simple algebra.
-\begin{exercise} % thanks to Silverman
-  Compute the minimal polynomial of $\alpha = \sqrt[3]{5} + \sqrt{2}$
-  by hand without finding the determinate of a $6\times 6$ matrix.
-
-  \begin{hint}
-    Let $a^2 = 2$, $b^3 = 5$, and $x = a+b$.
-    Then $(x-a)^3 = b^3 = 5$. Now simplify and
-    use the fact that $a^2 = 2$.
-  \end{hint}
-\end{exercise}
 
 The following is an alternative, more symbolic way to compute the
 minimal polynomials above, though it is not provably correct.  We
@@ -1177,6 +1181,18 @@ x^6 - 200
 \end{sageout}
 \end{sagecode}
 \end{example}
+\todo{is this example too long?}
+
+\begin{exercise} % thanks to Silverman
+  Compute the minimal polynomial of $\alpha = \sqrt[3]{5} + \sqrt{2}$
+  by hand without finding the determinate of a $6\times 6$ matrix.
+
+  \begin{hint}
+    Let $a^2 = 2$, $b^3 = 5$, and $x = a+b$.
+    Then $(x-a)^3 = b^3 = 5$. Now simplify and
+    use the fact that $a^2 = 2$.
+  \end{hint}
+\end{exercise}
 
 \begin{exercise}
   Let $\alpha = \sqrt{2} + \frac{1+\sqrt{5}}{2}$.
@@ -1254,6 +1270,7 @@ This fact is important enough to be stated as a separate theorem.
   As we will see, in general the problem of computing $\sO_K$ given $K$
   may be very hard, since it requires factoring a certain potentially
   large integer.
+  \todo{make this better}
 \end{example}
 
 \begin{exercise}
@@ -1311,6 +1328,14 @@ $\ZZ[i]$ is not an order because it is not a ring.
   elliptic curve cryptography to measure the number
   of isogenies; for example, see \cite[\S11.2]{Koblitz2011781}.
 \end{remark}
+
+\begin{exercise} % Due to Shahed Sharif
+  Let $K$ be a number field of degree $n$. Suppose $\{\alpha_1,\dots,\alpha_n\}$ is a $\ZZ$-independent set of algebraic integers. Is $\ZZ\alpha_1 + \cdots + \ZZ\alpha_n$ an ideal of $\sO_K$?
+  \todo{find a good place for this}
+\end{exercise}
+%\begin{solution}
+%  Not always. Consider $\{1,\sqrt(5)\}$ and $K = \QQ(\sqrt{5})$.
+%\end{solution}
 
 We define the number field $\QQ(i)$ and compute its
 ring of integers.
