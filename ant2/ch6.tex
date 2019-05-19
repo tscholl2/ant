@@ -11,6 +11,7 @@ orders and norms of ideals will play a crucial role in our proof of
 finiteness of the class group in the next chapter.
 
 \section{Viewing $\sO_K$ as a Lattice in a Real Vector Space}
+
 Let~$K$ be a number field of degree $n$.  By the primitive element
 theorem, $K=\QQ(\alpha)$ for some~$\alpha$, so we can write $K\isom
 \QQ[x]/(f)$, where $f\in\QQ[x]$ is the minimal polynomial of~$\alpha$.
@@ -18,12 +19,9 @@ Because $\CC$ is algebraically closed and~$f$ is irreducible, it has
 exactly $n=[K:\QQ]$ complex roots.  Each of these roots $z\in\CC$
 induces a homomorphism $\QQ[x] \to \CC$ given by $x\mapsto z$, whose
 kernel is the ideal $(f)$.  Thus we obtain~$n$ embeddings of $K\isom
-\QQ[x]/(f)$ into~$\CC$:
-\[
-  \sigma_1,\ldots, \sigma_n:K \hookrightarrow \CC.
-\]
+\QQ[x]/(f)$ into~$\CC$: $\sigma_1,\dots, \sigma_n:K \hookrightarrow \CC$.
 \begin{example}
-  We compute the embeddings listed above for $K=\QQ(\sqrt[3]{2})$ in {\Sage}.
+  We compute the embeddings listed above for $K=\QQ(\sqrt[3]{2})$.
 \begin{sagecode}
 \begin{sagecell}
 K = QQ[2^(1/3)]; K
@@ -47,27 +45,27 @@ Defn: a |--> 1.25992104989]
 
 
 Let $\sigma:K \hookrightarrow \CC^n$ be the map $a\mapsto
-(\sigma_1(a),\ldots,\sigma_n(a))$, and let $V=\RR\sigma(K)$ be the
+(\sigma_1(a),\dots,\sigma_n(a))$, and let $V=\RR\sigma(K)$ be the
 $\RR$-span of the image $\sigma(K)$ of~$K$ inside $\CC^n$.
 
 \begin{lemma}\label{lem:disc_finite}
   Suppose $L\subset \RR^n$ is a subgroup of the vector space~$\RR^n$.
   Then the induced topology on~$L$ is discrete if and only
   if for every  $H>0$ the set
-  $$
-  X_H = \{v \in L : \max\{|v_1|,\ldots, |v_n|\} \leq H \}
-  $$
+  \[
+    X_H = \{v \in L : \max\{|v_1|,\dots,|v_n|\} \leq H \}
+  \]
   is finite.
 \end{lemma}
 \begin{proof}
   If~$L$ is not discrete, then there is a point $x \in L$ such that
-  for every $\varepsilon > 0$ there is $y\in L$ such that
+  for every $\varepsilon > 0$ there is $y \in L$ such that
   $0 < |x-y| < \varepsilon$. By choosing smaller and smaller~$\varepsilon$,
   we find infinitely many elements $x-y\in L$
   all of whose coordinates are smaller than~$1$.
   The set $X_1$ is thus not finite.   Thus if the sets
   $X_H$ are all finite,~$L$ must be discrete.
-  
+
   Next assume that~$L$ is discrete and let $H>0$ be any positive number.
   Then for every $x\in X_H$ there is an open ball $B_x$ that
   contains~$x$ but no other element of~$L$.  Since $X_H$ is closed and
@@ -83,13 +81,13 @@ $\RR$-span of the image $\sigma(K)$ of~$K$ inside $\CC^n$.
   equals the dimension of~$V$.
 \end{lemma}
 \begin{proof}
-  Let $x_1,\ldots, x_m \in L$ be an $\RR$-vector space basis for
+  Let $x_1,\dots, x_m \in L$ be an $\RR$-vector space basis for
   $\RR{}L$, and consider the $\ZZ$-submodule $M=\ZZ x_1 + \cdots + \ZZ
   x_m$ of~$L$.  If the quotient $L/M$ is infinite, then there are
   infinitely many distinct elements of~$L$ that all lie in a
   fundamental domain for~$M$, so Lemma~\ref{lem:disc_finite} implies
   that $L$ is not discrete.  This is a contradiction, so $L/M$ is
-  finite, and the rank of~$L$ is $m=\dim(\RR{}L)$, as claimed.
+  finite, and the rank of~$L$ is $m=\dim(\RR L)$, as claimed.
 \end{proof}
 
 \begin{proposition}\iprop{dimension of embedding of field}
@@ -104,7 +102,7 @@ $\RR$-span of the image $\sigma(K)$ of~$K$ inside $\CC^n$.
   so the norms of nonzero elements of $\sO_K$ would go to~$0$.  This is a
   contradiction, since the norms of nonzero elements of $\sO_K$ are
   nonzero integers.
-  
+
   Since $\sigma(\sO_K)$ is discrete in $\CC^n$, Lemma~\ref{lem:disc_rankdim}
   implies that $\dim(V)$ equals the rank of $\sigma(\sO_K)$.  Since~$\sigma$
   is injective, $\dim(V)$ is the rank of $\sO_K$, which equals~$n$ by
@@ -112,34 +110,31 @@ $\RR$-span of the image $\sigma(K)$ of~$K$ inside $\CC^n$.
 \end{proof}
 
 \subsection{A Determinant}
-Suppose $w_1,\ldots, w_n$ is a basis for
+Suppose $w_1, \dots, w_n$ is a basis for
 $\sO_K$, and let $A$ be the matrix whose $i$th row is $\sigma(w_i)$.
 Consider the determinant $\det(A)$.
 \begin{example}
   The ring $\sO_K=\ZZ[i]$ of integers of $K=\QQ(i)$
   has $\ZZ$-basis $w_1=1$, $w_2=i$.
   The map $\sigma:K\to \CC^2$ is given by
-  $$
-  \sigma(a+bi) = (a+bi,a-bi)\in\CC^2.
-  $$
+  \[
+    \sigma(a+bi) = (a+bi,a-bi)\in\CC^2.
+  \]
   The image $\sigma(\sO_K)$ is spanned by
   $(1,1)$ and $(i,-i)$.
   The determinant is
   \[
-    \left|\begin{pmatrix}
-      1 & 1 \\
-      i & -i
-    \end{pmatrix}\right| = -2i.
+    \left|\begin{pmatrix} 1 & 1 \\ i & -i \end{pmatrix}\right| = -2i.
   \]
-  
+
   Let $\sO_K=\ZZ[\sqrt{2}]$ be the ring of integers of $K=\QQ(\sqrt{2})$.
   The map $\sigma$ is
   \[
-  \sigma(a+b\sqrt{2}) = (a+b\sqrt{2},a-b\sqrt{2})\in\RR^2,
+    \sigma(a+b\sqrt{2}) = (a+b\sqrt{2},a-b\sqrt{2})\in\RR^2,
   \]
   and
   \[
-  A = \begin{pmatrix} 1 & 1 \\ \sqrt{2} & -\sqrt{2} \end{pmatrix},
+    A = \begin{pmatrix} 1 & 1 \\ \sqrt{2} & -\sqrt{2} \end{pmatrix},
   \]
   which has determinant
   $ -2\sqrt{2}$.
@@ -150,11 +145,12 @@ square is an integer that does not depend on our choice of
 basis for $\sO_K$.
 
 \section{Discriminants}\label{sec:disc}
-Suppose $w_1,\ldots, w_n$ is a basis for $\sO_K$ as a $\ZZ$-module,
-which we view as a $\QQ$-vector space.  Let $ \sigma: K \hookrightarrow \CC^n $ be
-the embedding $\sigma(a)=(\sigma_1(a),\ldots,\sigma_n(a))$, where
-$\sigma_1,\ldots, \sigma_n$ are the distinct embeddings of $K$
-into~$\CC$.  Let $A$ be the matrix whose rows are $\sigma(w_1), \ldots,
+
+Suppose $w_1,\dots, w_n$ is a basis for $\sO_K$ as a $\ZZ$-module,
+which we view as a $\QQ$-vector space.  Let $\sigma: K \hookrightarrow \CC^n$ be
+the embedding $\sigma(a)=(\sigma_1(a),\dots,\sigma_n(a))$, where
+$\sigma_1,\dots, \sigma_n$ are the distinct embeddings of $K$
+into~$\CC$.  Let $A$ be the matrix whose rows are $\sigma(w_1), \dots,
 \sigma(w_n)$.
 
 Changing our choice of
@@ -165,12 +161,12 @@ This leads us to consider $\det(A)^2$ instead, which does not depend
 on the choice of basis; moreover, as we will see, $\det(A)^2$ is an integer.
 Note that
 \begin{align*}
-\det(A)^2 &= \det(AA) =
-\det(A)\det(A)=\det(A)\det(A^t)=
-\det(A A^t) \\
-&= \det\left(\sum_{k=1,\ldots,n} \sigma_k(w_i)\sigma_k(w_j)\right)
-= \det\left(\sum_{k=1,\ldots,n} \sigma_k(w_i w_j)\right)\\
-&= \det(\Trace(w_i w_j)_{1\leq i,j\leq n}),
+  \det(A)^2 &= \det(AA) =
+  \det(A)\det(A) = \det(A)\det(A^t) =
+  \det(A A^t) \\
+  &= \det\left(\sum_{k=1,\dots,n} \sigma_k(w_i)\sigma_k(w_j)\right)
+  = \det\left(\sum_{k=1,\dots,n} \sigma_k(w_i w_j)\right)\\
+  &= \det(\Trace(w_i w_j)_{1\leq i,j\leq n}),
 \end{align*}
 so $\det(A)^2$ can be defined purely in terms of the trace without
 mentioning the embeddings $\sigma_i$.
@@ -196,11 +192,11 @@ $\det(A)\neq 0$.
 \end{proof}
 
 \begin{definition}[Discriminant]\label{def:disc}
-  Suppose $a_1,\ldots, a_n$ is any $\QQ$-basis of $K$.  The \defn{discriminant}
-  of $a_1,\ldots, a_n$ is
-  $$
-  \Disc(a_1,\ldots,a_n) = \det(\Trace(a_i a_j)_{1\leq i,j\leq n})\in\QQ.
-  $$
+  Suppose $a_1,\dots, a_n$ is any $\QQ$-basis of $K$.  The \defn{discriminant}
+  of $a_1,\dots, a_n$ is
+  \[
+    \Disc(a_1,\dots,a_n) = \det(\Trace(a_i a_j)_{1\leq i,j\leq n})\in\QQ.
+  \]
   The \defn{discriminant} $\Disc(\sO)$ of an order $\sO$ in $\sO_K$ is
   the discriminant of any $\ZZ$-basis for~$\sO$.
   The \defn{discriminant} $d_K=\Disc(K)$ of the number field~$K$
@@ -215,11 +211,9 @@ $\det(A)\neq 0$.
   \sO_K$ with $\ZZ[\alpha]$ of finite index in $\sO_K$, and~$f$ is the
   minimal polynomial of $\alpha$, then $\Disc(f)=\Disc(\ZZ[\alpha])$.
   To see this, note that if we choose the basis
-  $1,\alpha,\ldots,\alpha^{n-1}$ for $\ZZ[\alpha]$, then both
+  $1,\alpha,\dots,\alpha^{n-1}$ for $\ZZ[\alpha]$, then both
   discriminants are the square of the same Vandermonde determinant.
 \end{remark}
-
-
 
 \begin{remark}
   If $S/R$ is an extension of Dedekind domains, with $S$ a free $R$
@@ -243,11 +237,10 @@ K.discriminant()
 5
 \end{sageout}
 \end{sagecode} %link
-  This also works for orders (notice the square factor
+  \noindent{}This also works for orders (notice the square factor
   below, which will be explained
   by Proposition~\ref{prop:indsquare}):
-  %link
-\begin{sagecode}
+\begin{sagecode} %link
 \begin{sagecell}
 R = K.order([7*a]); R
 \end{sagecell}
@@ -261,8 +254,10 @@ factor(R.discriminant())
 2^2 * 5 * 7^2
 \end{sageout}
 \end{sagecode}
-  
-  \noindent{\bf Warning:} In {\tt Magma} $\Disc(K)$ is defined to be the
+\end{example}
+
+\begin{warning}
+  In {\tt Magma} $\Disc(K)$ is defined to be the
   discriminant of the polynomial you happened to use to define~$K$.
 \begin{sagecode}
 \begin{lstlisting}[language=bash]
@@ -274,8 +269,7 @@ factor(R.discriminant())
   This is an intentional choice done for efficiency reasons, since
   computing the maximal order can take a long time.  Nonetheless, it
   conflicts with standard mathematical usage, so beware.
-\end{example}
-
+\end{warning}
 
 The following proposition asserts that the discriminant of an order
 $\sO$ in $\sO_K$ is bigger than $\Disc(\sO_K)$ by a factor of the square
@@ -299,9 +293,11 @@ of the index.
 
 \begin{example}\label{ex:exdim}
   Let $K$ be a number field and consider the quantity
-  $$
-  D(K) = \gcd\{\Disc(\alpha) : \alpha \in \sO_K \text{ and } [\sO_K:\ZZ{}[\alpha]] < \infty\}.
-  $$
+  \[
+    D(K) = \gcd\{
+    \Disc(\alpha) : \alpha \in \sO_K \text{ and } [\sO_K:\ZZ{}[\alpha]] < \infty
+    \}.
+  \]
   One might hope that $D(K)$ is equal to the discriminant $\Disc(\sO_K)$
   of $K$, but this is not the case in general.  Recall
   Example~\ref{ex:dedekind}, in which we considered the field $K$ generated
@@ -325,13 +321,13 @@ factor(K.discriminant())
 \end{example}
 
 Proposition~\ref{prop:indsquare} gives an algorithm for computing $\sO_K$,
-albeit a  slow one.  Given~$K$, find some order $\sO \subset K$, and
-compute $d=\Disc(\sO)$.  Factor~$d$, and use the factorization
+albeit a  slow one.  Given~$K$, find some order $\sO\subset
+K$, and compute $d=\Disc(\sO)$.  Factor~$d$, and use the factorization
 to write $d=s\cdot f^2$, where $f^2$ is the largest square that
 divides~$d$.  Then the index of $\sO$ in $\sO_K$ is a divisor of~$f$,
-and we (tediously) can enumerate all rings~$R$ with
-$\sO \subset R\subset K$ and $[R:\sO] \mid f$, until we find the largest
-one all of whose elements are integral.  A much better algorithm is to proceed
+and we (tediously) can enumerate all rings~$R$ with $\sO\subset
+R\subset K$ and $[R:\sO] \mid f$, until we find the largest one all of
+whose elements are integral.  A much better algorithm is to proceed
 exactly as just described, except use the ideas
 of Section~\ref{sec:alg_pmax} to find a~$p$-maximal order for each prime
 divisor of~$f$, then add these $p$-maximal orders together.
@@ -341,12 +337,12 @@ divisor of~$f$, then add these $p$-maximal orders together.
   $K=\QQ(\sqrt{5})$.  The discriminant of the basis $1,a=(1+\sqrt{5})/2$
   is
   \[
-    \Disc(\sO_K) = \left| \begin{pmatrix} 2 & 1 \\ 1 & 3 \end{pmatrix} \right| = 5.
+  \Disc(\sO_K) = \left| \begin{pmatrix} 2 & 1 \\ 1 & 3\end{pmatrix} \right| = 5.
   \]
   Let $\sO=\ZZ[\sqrt{5}]$ be the order generated by $\sqrt{5}$.
   Then~$\sO$ has basis $1,\sqrt{5}$, so
   \[
-    \Disc(\sO) = \left| \begin{pmatrix} 2 & 0 \\ 0 & 10 \end{pmatrix} \right| = 20 = [\sO_K:\sO]^2\cdot 5,
+  \Disc(\sO) = \left| \begin{pmatrix} 2 & 0 \\ 0 & 10\end{pmatrix} \right| = 20 = [\sO_K:\sO]^2\cdot 5,
   \]
   hence~$[\sO_K:\sO] = 2$.
 \end{example}
@@ -358,10 +354,10 @@ divisor of~$f$, then add these $p$-maximal orders together.
   the matrix of the trace pairing is
   \[
     A = \begin{pmatrix}
-      3 & 0 & 0 \\
-      0 & 0 & 6 \\
-      0 & 6 & 0.
-    \end{pmatrix}
+     3 & 0 & 0 \\
+     0 & 0 & 6 \\
+     0 & 6 & 0
+    \end{pmatrix}.
   \]
   Thus
   \[
@@ -403,8 +399,10 @@ The lattice index has the
 following properties:
 \begin{itemize}
   \item If $M\subset L$, then $[L:M]=\#(L/M)$.
-  \item If $M, L, N$ are any lattices in~$V$,
-  then $$[L:N] = [L:M]\cdot [M:N].$$
+  \item If $M, L, N$ are any lattices in~$V$, then
+  \[
+    [L:N] = [L:M]\cdot [M:N].
+  \]
 \end{itemize}
 
 
@@ -419,7 +417,7 @@ following properties:
 Note that if $I$ is an integral ideal, then $\Norm(I)=\#(\sO_K/I)$.
 
 \begin{lemma}\label{lem:aIfrac}\ilem{$\Norm(a I)$}
-  Suppose $a\in K$ and $I$ is an integral ideal.
+  Suppose $a \in K$ and $I$ is an integral ideal.
   Then
   \[
     \Norm(a I) = \left|\Norm_{K/\QQ}(a)\right| \Norm(I).
@@ -433,7 +431,10 @@ Note that if $I$ is an integral ideal, then $\Norm(I)=\#(\sO_K/I)$.
   \]
   Here we have used that $[I:aI]=\left|\Norm_{K/\QQ}(a)\right|$, which is because left
   multiplication $\ell_a$ by $a$ is an automorphism of $K$ that sends $I$ onto
-  $aI$, so $$[I:aI]=\left|\det(\ell_a)\right|=\left|\Norm_{K/\QQ}(a)\right|.$$
+  $aI$, so
+  \[
+    [I:aI]=\left|\det(\ell_a)\right|=\left|\Norm_{K/\QQ}(a)\right|.
+  \]
 \end{proof}
 
 \begin{proposition}\iprop{multiplicativity of ideal norm}
@@ -475,7 +476,7 @@ J.norm()
 289
 \end{sageout}
 \end{sagecode} %link
-  We can also use functional notation:
+\noindent{} We can also use functional notation:
 \begin{sagecode} %link
 \begin{sagecell}
 norm(I*J)
@@ -499,6 +500,6 @@ we prove finiteness of class groups.
   An integral ideal $I$ is a subgroup of $\sO_K$ of index equal to the
   norm of $I$.  If $G$ is any finitely generated abelian group, then
   there are only finitely many subgroups of $G$ of index at most $B$.
-  This is because the subgroups of index dividing an integer $n$ are all
-  subgroups of $G$ that contain $nG$, and the group $G/nG$ is finite.
+  This is because the subgroups of index dividing an integer $n$ are all subgroups
+  of $G$ that contain $nG$, and the group $G/nG$ is finite.
 \end{proof}
