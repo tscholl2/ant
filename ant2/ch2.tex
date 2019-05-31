@@ -43,10 +43,10 @@ by~$1$.
 \begin{theorem}[Structure Theorem for Finitely Generated Abelian Groups]
   \label{thm:struc}\ithm{structure of abelian groups}
   Let $G$ be a finitely generated abelian group. Then there is an isomorphism
-  $$
+  \[
     G \ncisom (\ZZ/n_1\ZZ) \oplus (\ZZ/n_2\ZZ) \oplus
     \cdots \oplus (\ZZ/n_s\ZZ) \oplus \ZZ^{r},
-  $$
+  \]
   where $r, s\geq 0$, $n_i>1$ for all $i$, and
   $n_1 \mid n_2 \mid \cdots \mid n_s$.
   Furthermore, the $n_i$ and~$r$ are uniquely determined by~$G$.
@@ -97,17 +97,17 @@ in the context of Noetherian rings (the Hilbert basis theorem).
 \end{proof}
 
 An \defn{sequence} of homomorphisms of abelian groups
-$$
+\[
   H \xrightarrow{f} G \xrightarrow{g} K
-$$
+\]
 is exact if $\Image(f) = \ker(g)$.
 For longer sequences, exactness means every three consecutive
 terms with two arrows are exact.
 Given a finitely generated abelian group $G$,
 Corollary~\ref{cor:presentation} provides an exact sequence
-$$
+\[
   F_2 \xrightarrow{\psi} F_1 \to G \to 0.
-$$
+\]
 
 Suppose $G$ is a nonzero finitely generated abelian group.  By the
 corollary, there are free abelian groups $F_1$ and $F_2$ and there is a
@@ -118,9 +118,9 @@ Just as in linear algebra, we view $\psi:F_2\to F_1$ as being given
 by left multiplication by the $n\times m$ matrix $A$ whose columns
 are the images of the generators of $F_2$ in $\ZZ^n$.  We visualize
 this as follows:
-$$
+\[
   \ZZ^m \xrightarrow{A} \ZZ^n \to G \to 0
-$$
+\]
 
 The \defn{cokernel} of the homomorphism defined by $A$ is the quotient
 of $\ZZ^n$ by the image of $A$ (i.e., the $\ZZ$-span of the columns of $A$),
@@ -528,24 +528,24 @@ contain many different maximal elements.
   A \defn{homomorphism} of $R$-modules $\varphi:M\to N$ is an abelian
   group homomorphism such that for any $r\in R$ and $m\in M$ we have
   $\varphi(rm) = r\varphi(m)$. A sequence
-  $$
+  \[
     L \xrightarrow{f} M \xrightarrow{g} N,
-  $$
+  \]
   where $f$ and $g$ are homomorphisms of $R$-modules, is \defn{exact}
   if $\Image(f)=\ker(g)$. A \defn{short exact sequence} of $R$-modules
   is a sequence
-  $$
+  \[
     0 \to L \xrightarrow{f} M \xrightarrow{g} N \to 0
-  $$
+  \]
   that is exact at each point, i.e., $f$ is injective, $g$ is surjective,
   and $\Image(f) = \ker(g)$.
 \end{definition}
 
 \begin{example}
   The sequence
-  $$
+  \[
     0 \to \ZZ \xrightarrow{2} \ZZ\rightarrow \ZZ/2\ZZ \to 0
-  $$
+  \]
   is an exact sequence, where the first map sends $1$ to $2$,
   and the second is the natural quotient map.
 \end{example}
@@ -553,9 +553,9 @@ contain many different maximal elements.
 
 \begin{lemma}\label{lem:noetherianexact}\ilem{exactness and noetherian}
   If
-  $$
+  \[
     0 \to L \xrightarrow{f} M \xrightarrow{g} N \to 0
-  $$
+  \]
   is a short exact sequence of~$R$-modules, then~$M$ is noetherian
   if and only if both~$L$ and~$N$ are noetherian.
 \end{lemma}
@@ -605,9 +605,9 @@ contain many different maximal elements.
 \begin{proof}
   The kernel of $\varphi$ is an ideal $I$ in $R$, and
   we have an exact sequence
-  $$
+  \[
     0 \to I \to R \to S \to 0
-  $$
+  \]
   with~$R$ noetherian.
   This is an exact sequence of $R$-modules, where $S$ has the
   $R$-module structure induced from $\varphi$ (if $r\in R$
@@ -937,8 +937,12 @@ x^2 - 6*x + 7
   Let~$f$ be a choice of minimal polynomial of~$\alpha$, as in
   Definition~\ref{defn:minpoly}, and let $h$ be a polynomial with
   $h(\alpha)=0$.  Use the division algorithm to write $h=qf + r$,
-  where $0\leq \deg(r) < \deg(f)$.  We have $$r(\alpha) = h(\alpha) -
-  q(\alpha) f(\alpha) = 0,$$ so $\alpha$ is a root of~$r$.
+  where $0\leq \deg(r) < \deg(f)$.  We have
+  \[
+    r(\alpha) = h(\alpha) -
+  q(\alpha) f(\alpha) = 0,
+  \]
+  so $\alpha$ is a root of~$r$.
   However,~$f$ is a polynomial of least positive degree with
   root~$\alpha$, so $r=0$.
 \end{proof}
@@ -1040,9 +1044,9 @@ to have denominators when written down, but are still algebraic integers.
 This is an artifact of how we write them down, e.g., if we wrote
 our integers as a multiple of $\alpha=2$, then we would write $1$
 as $\alpha/2$. For example,
-$$
+\[
   \alpha = \frac{1+\sqrt{5}}{2}
-$$
+\]
 is an algebraic integer, since it is a root of the monic integral
 polynomial $x^2 - x - 1$.  We verify this using {\Sage} below,
 though of course this is easy to do by hand (you should try
@@ -1147,9 +1151,9 @@ trivial to compute by hand.  In light of the Cayley-Hamilton theorem,
 we can compute the minimal polynomial of $\alpha = \sqrt[3]{5} +
 \sqrt{2}$ by hand by computing the determinant of the matrix given by
 left multiplication by $\alpha$ on the basis
-$$
+\[
   1,\sqrt{2}, \sqrt[3]{5}, \sqrt[3]{5}\sqrt{2}, \sqrt[3]{5}^2, \sqrt[3]{5}^2\sqrt{2}.
-$$
+\]
 This is a general method which works well for computers. However it can
 also be done using simple algebra.
 
@@ -1221,9 +1225,9 @@ embedded in $[K:\QQ]=\deg(f)$ distinct ways in $\overline{\QQ}$.
 
 \begin{definition}[Ring of Integers]
   The \defn{ring of integers} of a number field~$K$ is the ring
-  $$
+  \[
     \sO_K = \{x \in K : \text{ $x$ is an algebraic integer}\}.
-  $$
+  \]
 \end{definition}
 
 One of the most basic facts about $\sO_K$ is that it is indeed a ring.
@@ -1608,11 +1612,11 @@ $K$-linear because $L$ is commutative.)
 
 \begin{definition}[Norm and Trace]\label{defn:normtrace}
   The \defn{norm} and \defn{trace} of~$a$ from~$L$ to~$K$ are
-  $$
+  \[
     \Norm_{L/K}(a)=\det(\ell_a)
     \quad\text{ and }\quad
     \Trace_{L/K}(a)=\Trace(\ell_a).
-  $$
+  \]
 \end{definition}
 
 \begin{example}
@@ -1639,9 +1643,13 @@ $K$-linear because $L$ is commutative.)
 We know from linear algebra that
 determinants are multiplicative
 and traces are additive, so for $a,b\in L$ we have
-$$\Norm_{L/K}(ab) = \Norm_{L/K}(a)\cdot \Norm_{L/K}(b)$$
+\[
+  \Norm_{L/K}(ab) = \Norm_{L/K}(a)\cdot \Norm_{L/K}(b)
+\]
 and
-$$\Trace_{L/K}(a+b) = \Trace_{L/K}(a) + \Trace_{L/K}(b).$$
+\[
+  \Trace_{L/K}(a+b) = \Trace_{L/K}(a) + \Trace_{L/K}(b).
+\]
 
 Note that if $f\in\QQ[x]$ is the characteristic polynomial of~$\ell_a$,
 then the constant term of $f$ is $(-1)^{\deg(f)}\det(\ell_a)$, and the
@@ -1724,11 +1732,11 @@ towers.
   \icor{norm, trace compatible with towers}\label{cor:compatower}
   Suppose $K\subset L \subset M$ is a tower of number fields, and
   let $a\in M$.  Then
-  $$
+  \[
     \Norm_{M/K}(a) = \Norm_{L/K}(\Norm_{M/L}(a))
     \quad\text{ and }\quad
     \Trace_{M/K}(a) = \Trace_{L/K}(\Trace_{M/L}(a)).
-  $$
+  \]
 \end{corollary}
 \begin{proof}
   The proof uses that every embedding $L \hookrightarrow \overline{\QQ}$ extends in exactly
@@ -1764,11 +1772,11 @@ towers.
   elements of $\sO_K$ with $c_i$ between $0$ and $1$, the denominators of
   the $c_i$ are also arbitrarily large.  This implies that there are
   infinitely many elements of $\sO_K$ in the bounded subset
-  $$
+  \[
     S = \left\{
       c_1 a_1 +\cdots + c_n a_n : c_i \in \QQ,\, 0\leq c_i \leq 1
     \right\} \subset K.
-  $$
+  \]
   Thus for any $\varepsilon>0$, there are elements $a,b\in \sO_K$ such that the
   coefficients of $a-b$ are all less than $\varepsilon$ (otherwise the elements
   of $\sO_K$ would all be a ``distance''
@@ -1808,16 +1816,16 @@ towers.
 Suppose we somehow compute a decimal approximation $\alpha$
 to some rational number $\beta \in \QQ$ and from this wish
 to recover $\beta$.  For concreteness, say
-$$
+\[
   \beta = \frac{22}{389} =
   0.05655526992287917737789203
   084832904884318766066838046
   \dots
-$$
+\]
 and we compute
-$$
+\[
   \alpha = 0.056555.
-$$
+\]
 Now suppose given only $\alpha$ that you would like to recover
 $\beta$.  A standard technique is to use continued fractions, which
 yields a sequence of good rational approximations
@@ -1869,13 +1877,13 @@ sufficient precision.
 Given a basis $b_1,\dots, b_n$ for $\RR^n$, the \defn{Gramm-Schmidt
 orthogonalization} process produces an orthogonal basis
 $b_1^*,\dots, b_n^*$ for $\RR^n$ as follows.  Define inductively
-$$
+\[
   b_i^* = b_i - \sum_{j < i} \mu_{i,j} b_j^*
-$$
+\]
 where
-$$
+\[
   \mu_{i,j} = \frac{b_i \cdot b_j^*}{b_j^* \cdot b_j^*}.
-$$
+\]
 
 \begin{example}
 We compute the Gramm-Schmidt orthogonal basis of the rows
@@ -1923,32 +1931,32 @@ is free of rank $n$ such that $\RR L = \RR^n$.
 \begin{definition}[LLL-reduced basis]
 The basis $b_1,\dots,b_n$ for a lattice $L \subset \RR^n$
 is \defn{LLL reduced} if for all $i,j$,
-$$
+\[
    |\mu_{i,j}| \leq \frac{1}{2}
-$$
+\]
 and for each $i\geq 2$,
-$$
+\[
   |b_i^*|^2 \geq \left( \frac{3}{4} - \mu_{i,i-1}^2\right) | b_{i-1}^*|^2
-$$
+\]
 \end{definition}
 
 For example, the basis $b_1 = (1,2)$, $b_2 = (3,4)$ for a lattice $L$
  is {\em not}
 LLL reduced because $b_1^*=b_1$ and
-$$
+\[
   \mu_{2,1} = \frac{b_2 \cdot b_1^*}{b_1^* \cdot b_1^*}
   = \frac{11}{5} > \frac{1}{2}.
-$$
+\]
 However, the basis $b_1 = (1,0)$, $b_2 = (0,2)$ for $L$ is
 LLL reduced, since
-$$
+\[
   \mu_{2,1} = \frac{b_2 \cdot b_1^*}{b_1^* \cdot b_1^*}
   = 0,
-$$
+\]
 and
-$$
+\[
   2^2 \geq (3/4) \cdot 1^2.
-$$
+\]
 \begin{sagecode}
 \begin{sagecell}
 A = matrix(ZZ, 2, [1,2, 3,4])
@@ -1976,24 +1984,24 @@ the sense of the following theorem:
       $d(L) \leq \prod_{i=1}^n |b_i| \leq 2^{n(n-1)/4} d(L)$.
     \item
       For $1\leq j \leq i \leq n$, we have
-      $$
+      \[
         |b_j| \leq 2^{(i-1)/2} |b_i^*|.
-      $$
+      \]
     \item
       The vector $b_1$ is very short in the sense that
-      $$
+      \[
         |b_1| \leq 2^{(n-1)/4} d(L)^{1/n}
-      $$
+      \]
       and for every nonzero $x \in L$ we have
-      $$
+      \[
         |b_1| \leq 2^{(n-1)/2} |x|.
-      $$
+      \]
     \item
       More generally, for any linearly independent
       $x_1,\dots, x_t \in L$, we have
-      $$
+      \[
         |b_j| \leq 2^{(n-1)/2} \max(|x_1|, \dots, |x_t|)
-      $$
+      \]
       for $1\leq j \leq t$.
   \end{enumerate}
 \end{theorem}
