@@ -1458,7 +1458,7 @@ Oa.index_in(OK)
 \end{proof}
 
 \begin{exercise}
-  Which are the following rings are orders in the given
+  Which of the following rings are orders in the given
   number field, i.e. orders in the ring of integers of the
   given number field.
   \begin{enumerate}
@@ -1468,11 +1468,23 @@ Oa.index_in(OK)
     \item[(d)] The ring $R = \ZZ[i]$ in the number field $\QQ(\sqrt[4]{-1})$.
   \end{enumerate}
 \end{exercise}
+%\begin{solution}
+%(a) True.
+%(b) False.
+%(c) True.
+%(d) False.
+%\end{solution}
 
 \begin{exercise}
-  Find the ring of integers of $\QQ(a)$, where $a^5 + 7a + 1 = 0$
+  Find the ring of integers of $\QQ(\alpha)$, where $\alpha^5 + 7\alpha + 1 = 0$
   using a computer.
 \end{exercise}
+%\begin{solution}
+%K.<a> = NumberField(x^5+7*x+1)
+%OK = K.ring_of_integers()
+%OK.basis()
+%[5/9*a^4 + 2/9*a^3 + 8/9*a^2 + 5/9*a + 1/9, a, a^2, a^3, a^4]
+%\end{solution}
 
 \subsection{Function fields}
 Let $k$ be any field.  We can also make the same definitions, but with $\QQ$
@@ -1503,6 +1515,9 @@ with no poles also have no poles.
     For some people, it is easier to think about the equivalent question: What rational functions $f\in k(t)$ is the map $k(t)\to k(t)$ given by $t\mapsto f(t)$ an automorphism?
   \end{hint}
 \end{exercise}
+%\begin{solution}
+% They are linear rational functions (a+bt)/(c+dt), i.e. PGL_2
+%\end{solution}
 
 \section{Norms and Traces}
 
@@ -1525,9 +1540,9 @@ The element $\sqrt{2}$ has minimal polynomial $x^2-2$ and the Galois
 conjugates of $\sqrt{2}$ are $\sqrt{2}$ and $-\sqrt{2}$.  The cube root $\sqrt[3]{2}$
 has minimial polynomial $x^3 - 2$ and three Galois conjugates
 $\sqrt[3]{2}, \zeta_3\sqrt[3]{2}, \zeta_3^2\sqrt[3]{2}$, where
-$\zeta_3$ is a cube root of unity.
+$\zeta_3$ is a cube root of unity, e.g. $\zeta_3 = e^{2\pi i/3}$.
 
-We create the extension $\QQ(\zeta_3)(\sqrt[3]{2})$ in {\Sage}.
+We can create the extension $\QQ(\zeta_3)(\sqrt[3]{2})$ in {\Sage} in this way:
 \begin{sagecode}
 \begin{sagecell}
 L.<cuberoot2> = CyclotomicField(3).extension(x^3 - 2)
@@ -1562,10 +1577,34 @@ zeta3^2
 \end{sagecode}
 \end{example}
 
-Suppose $K\subset L$ is an inclusion of number fields and let $a\in
-L$.  Then left multiplication by~$a$ defines a $K$-linear
+Suppose $K \subset L$ is an inclusion of number fields and let $a \in L$.
+\todo{use alpha instead of a}
+Then left multiplication by~$a$ defines a $K$-linear
 transformation $\ell_a:L\to L$.  (The transformation $\ell_a$ is
 $K$-linear because $L$ is commutative.)
+
+\begin{example}\label{ex:matrix-of-multiplication-by-alpha}
+	Let $K = \QQ$ and $L = \QQ(\sqrt{5})$. Then $B = \{1,\sqrt{5}\}$ is a basis for 
+	$\QQ(\sqrt{5})$ as a $\QQ$-vector space. So we can identify $\QQ(\sqrt{5})$
+	with $\QQ^2$ by
+	\[
+		a + b\sqrt{5} \leftrightarrow \begin{pmatrix} a \\ b \end{pmatrix}
+	\]
+	Let $\alpha = 7 + 3\sqrt{5}$. The matrix for $\ell_{\alpha}$ with
+	respect to the basis $B$ is
+	\[
+		\ell_{\alpha} = \begin{pmatrix} 7 & 15 \\ 3 & 7 \end{pmatrix}.
+	\]
+	The following is an example of how to translate from the language
+	of algebraic numbers to the language of linear algebra:
+	\[
+		\alpha(2 + \sqrt{5}) + (3 + 5\sqrt{5}) \leftrightarrow
+		\begin{pmatrix} 7 & 15 \\ 3 & 7 \end{pmatrix}
+		\begin{pmatrix} 2 \\ 1 \end{pmatrix}
+		+
+		\begin{pmatrix} 3 \\ 5 \end{pmatrix}.
+	\]
+\end{example}
 
 \begin{definition}[Norm and Trace]\label{defn:normtrace}
   The \defn{norm} and \defn{trace} of~$a$ from~$L$ to~$K$ are
@@ -1575,6 +1614,28 @@ $K$-linear because $L$ is commutative.)
     \Trace_{L/K}(a)=\Trace(\ell_a).
   $$
 \end{definition}
+
+\begin{example}
+	Continuing example~\ref{ex:matrix-of-multiplication-by-alpha}, we can compute
+	\[
+		\Norm_{\QQ(\sqrt{5})/\QQ}(7 + 3\sqrt{5})
+		=
+		\det \begin{pmatrix} 7 & 15 \\ 3 & 7 \end{pmatrix}
+		=
+		49 - 45
+		=
+		4
+	\]
+	and
+	\[
+		\Trace_{\QQ(\sqrt{5})/\QQ}(7 + 3\sqrt{5})
+		=
+		\Trace \begin{pmatrix} 7 & 15 \\ 3 & 7 \end{pmatrix}
+		=
+		14.
+	\]
+\end{example}
+
 We know from linear algebra that
 determinants are multiplicative
 and traces are additive, so for $a,b\in L$ we have
@@ -1590,11 +1651,11 @@ coefficient of $x^{\deg(f)-1}$ is $-\Trace(\ell_a)$.
   Let $a\in L$ and let $\sigma_1,\dots, \sigma_d$, where $d=[L:K]$, be
   the distinct field embeddings $L \hookrightarrow \overline{\QQ}$ that fix every element
   of~$K$.  Then
-  $$
+  \[
     \Norm_{L/K}(a) = \prod_{i=1}^d \sigma_i(a)
     \quad\text{ and }\quad
     \Trace_{L/K}(a) = \sum_{i=1}^d \sigma_i(a).
-  $$
+  \]
 \end{proposition}
 \begin{proof}
   We prove the proposition by computing the characteristic
@@ -1609,8 +1670,8 @@ coefficient of $x^{\deg(f)-1}$ is $-\Trace(\ell_a)$.
   $1,\dots, a^m$ is a basis for $K(a)/K$, where $m=\deg(f)-1$.  Then
   $a^i b_j$ is a basis for $L$ over $K$, and left multiplication by
   $a$ acts the same way on the span of $b_j, a b_j, \dots, a^m b_j$
-  as on the span of $b_k, a b_k, \dots, a^m b_k$, for any pair $j,
-  k\leq n$.  Thus the matrix of $\ell_a$ on $L$ is a block direct sum
+  as on the span of $b_k, a b_k, \dots, a^m b_k$, for any pair
+  $j,k \leq n$.  Thus the matrix of $\ell_a$ on $L$ is a block direct sum
   of copies of the matrix of $\ell_a$ acting on $K(a)$, so the
   characteristic polynomial of $\ell_a$ on~$L$ is $f^{[L:K(a)]}$.  The
   proposition follows because the roots of $f^{[L:K(a)]}$ are exactly
@@ -1634,6 +1695,28 @@ coefficient of $x^{\deg(f)-1}$ is $-\Trace(\ell_a)$.
   down to~$K$ of $\alpha$ is an element of~$\sO_K$, because the sum and
   product of algebraic integers is an algebraic integer.
 \end{remark}
+
+\begin{example}
+	Continuing example~\ref{ex:matrix-of-multiplication-by-alpha},
+	let $\alpha = 7 + 3\sqrt{5}$. The images of $\alpha$ in the embeddings
+	$\QQ(\sqrt{5}) \to \CC$ are $7 + 3\sqrt{5}$ and $7 - 3\sqrt{5}$. So
+	using Proposition~\ref{prop:normtracesigma} we can compute
+	\[
+		\Norm_{\QQ(\sqrt{5})/\QQ}(7 + 3\sqrt{5})
+		=
+		(7 + 3\sqrt{5})(7 - 3\sqrt{5})
+		=
+		4
+	\]
+	and
+	\[
+		\Trace_{\QQ(\sqrt{5})/\QQ}(7 + 3\sqrt{5})
+		=
+		(7 + 3\sqrt{5}) + (7 - 3\sqrt{5})
+		=
+		14.
+	\]
+\end{example}
 
 The following corollary asserts that the norm and trace behave well in
 towers.
