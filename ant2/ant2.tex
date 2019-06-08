@@ -43,6 +43,7 @@
 \DeclareMathOperator{\Frac}{Frac}
 \DeclareMathOperator{\Spec}{Spec}
 \DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\tor}{tor}
 \DeclareMathOperator{\Ext}{Ext}
 \DeclareMathOperator{\Aut}{Aut}
 \DeclareMathOperator{\End}{End}
@@ -60,8 +61,12 @@
 \DeclareMathOperator{\Hom}{Hom}
 \DeclareMathOperator{\Res}{res}
 \DeclareMathOperator{\Cores}{cores}
-\DeclareMathOperator{\Sha}{{\cyr X}}
 \renewcommand{\H}{H}
+% Sha
+\DeclareFontFamily{U}{wncy}{}
+\DeclareFontShape{U}{wncy}{m}{n}{<->wncyr10}{}
+\DeclareSymbolFont{mcy}{U}{wncy}{m}{n}
+\DeclareMathSymbol{\Sha}{\mathord}{mcy}{"58}
 
 \newcommand{\Sage}{\texttt{Sage}}
 
@@ -125,9 +130,9 @@
 %\include{ch7} % classgroup
 %\include{ch8} % dirichlet
 %\include{ch9} % decomp
-%\include{ch10} % galrep
+\include{ch10} % galrep
 %\include{ch11} % cohomology
-\include{ch12} % weakmw
+%\include{ch12} % weakmw
 
 \backmatter
 \printindex
