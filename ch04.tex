@@ -29,24 +29,18 @@ of $p\sO_K$ is easier than computing~$\sO_K$.
 
 \section{The Problem}
 
-\begin{figure}
-  \centering
-  \includegraphics[width=20em]{img/spec}
-  \caption{A diagram from \cite{lenstras:nfs}}.
-\end{figure}
+\begin{center}
+\begin{minipage}{0.7\linewidth}
+``The obvious mathematical breakthrough would be development of an easy
+way to factor large prime numbers.''
 
-\todo{INSERT PICTURE}
-%\begin{center}
-%\begin{minipage}{0.7\linewidth}
-%``The obvious mathematical breakthrough would be development of an easy
-%way to factor large prime numbers.''
-%
-%-- {Bill Gates, {\em The Road Ahead}, 1st ed., pg 265}
-%\end{minipage}
-%\begin{minipage}{0.2\linewidth}
-%\includegraphics[width=1in]{img/Bill_Gates_June_2015}
+-- {Bill Gates, {\em The Road Ahead}, 1st ed., pg 265}
+\end{minipage}
+\begin{minipage}{0.2\linewidth}
+\includegraphics[width=1in]{img/Bill_Gates_June_2015}
 %https://commons.wikimedia.org/wiki/File:Bill_Gates_June_2015.jpg
-%\end{center}
+\end{minipage}
+\end{center}
 
 Bill Gates meant\footnote{This quote is on page 265 of the first
   edition.  In the second edition, on page 303, this sentence is
@@ -70,9 +64,17 @@ $$
 
 \subsection{Geometric Intuition}\label{sec:geom_intuition}
 
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=20em]{img/spec}
+  \caption{A diagram from the cover of \cite{lenstras:nfs}}.\label{fig:lenstra-cover}
+\end{figure}
+
 Let $K=\QQ(\alpha)$ be a number field, and let $\sO_K$ be the ring of integers
 of $K$. To employ our geometric intuition, as the Lenstras did on the cover
-of \cite{lenstras:nfs}, it is helpful to view $\sO_K$ as a 1-dimensional scheme
+of \cite{lenstras:nfs}
+(see Figure~\ref{fig:lenstra-cover}),
+it is helpful to view $\sO_K$ as a 1-dimensional scheme
 $$
   X = \Spec(\sO_K) = \{\text{all prime ideals of $\sO_K$}\}
 $$
@@ -116,7 +118,7 @@ This chapter is about how to compute the $\p_i$ and $e_i$.
 
 \begin{exercise}
   Let $\varphi: R \to S$ be a homomorphism of (commutative) rings.
-  \begin{enumerate}
+  \begin{enumerate}[label=(\alph*)]
     \item Prove that if $I \subset S$ is an ideal, then $\varphi^{-1}(I)$
     is an ideal of~$R$.
     \item Prove moreover that if $I$ is prime, then $\varphi^{-1}(I)$ is
@@ -133,7 +135,7 @@ This chapter is about how to compute the $\p_i$ and $e_i$.
   $$
   where~$I$ varies through {\em all} ideals of $\sO_K$, and $\p\mid I$ means
   that $I \subset \p$.
-  \begin{enumerate}
+  \begin{enumerate}[label=(\alph*)]
     \item\label{exercise:zariski-part-1} Prove that the collection of closed
     sets of the form $V(I)$ is a topology on $X$.
     \item Let $Y$ be the subset of nonzero prime ideals of $\sO_K$, with the
@@ -154,20 +156,20 @@ This chapter is about how to compute the $\p_i$ and $e_i$.
 
 \begin{exercise}
   Which of the following rings have infinitely many prime ideals?
-  \begin{enumerate}
-    \item[(a)]
+  \begin{enumerate}[label=(\alph*)]
+    \item
     The integers $\ZZ$.
-    \item[(b)]
+    \item
     The ring $\ZZ[x]$ of polynomials over $\ZZ$.
-    \item[(c)]
+    \item
     The quotient ring $\CC[x]/(x^{2005}-1)$.
-    \item[(d)]
+    \item
     The ring $(\ZZ/6\ZZ)[x]$ of polynomials over the ring $\ZZ/6\ZZ$.
-    \item[(e)]
+    \item
     The quotient ring $\ZZ/n\ZZ$, for a fixed positive integer~$n$.
-    \item[(f)]
+    \item
     The rational numbers~$\QQ$.
-    \item[(g)]
+    \item
     The polynomial ring $\QQ[x,y,z]$ in three variables.
   \end{enumerate}
 \end{exercise}
@@ -896,7 +898,7 @@ recommended, and goes into much more detail about these algorithms.
 \begin{exercise}
   Let $K=\QQ(\zeta_{13})$,where $\zeta_{13}$ is a primitive $13$th root of
   unity. Note that~$K$ has ring of integers $\sO_K=\ZZ[\zeta_{13}]$.
-  \begin{enumerate}
+  \begin{enumerate}[label=(\alph*)]
     \item Factor $2$, $3$, $5$, $7$, $11$, and $13$ in the ring
     of integers $\sO_K$.  You may use a computer.
     \item For $p\neq 13$, find a conjectural
