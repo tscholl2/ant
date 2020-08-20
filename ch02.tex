@@ -378,7 +378,7 @@ M = matrix(R, 3, [1,2,3,0,1+i,2,0,1,5]); show(M)
 
 \begin{exercise}
   Let $A=\begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{pmatrix}$.
-  \begin{enumerate}[\label=(\alph*)]
+  \begin{enumerate}[label=(\alph*)]
   \item Find the Smith normal form of $A$.
   \item Prove that
   the cokernel of the map $\ZZ^3\to \ZZ^3$ given by multiplication by~$A$
@@ -474,17 +474,17 @@ contain many different maximal elements.
 
 \begin{proposition}\iprop{characterization of noetherian}
   If $M$ is an $R$-module, then the following are equivalent:
-  \begin{enumerate}
-    \item $M$ is noetherian,
-    \item $M$ satisfies the ascending chain condition, and
-    \item Every nonempty set of submodules of $M$ contains at
+  \begin{enumerate}[label=(\alph*)]
+    \item\label{itm:noeth1} $M$ is noetherian,
+    \item\label{itm:noeth2} $M$ satisfies the ascending chain condition, and
+    \item\label{itm:noeth3} Every nonempty set of submodules of $M$ contains at
     least one maximal element.
   \end{enumerate}
 \end{proposition}
 \begin{proof}
   \hfill
   \begin{description}
-    \item[$(1 \implies 2):$]
+    \item[$\ref{itm:noeth1} \implies \ref{itm:noeth2}:$]
       Suppose $M_1\subset M_2\subset \cdots$ is a
       sequence of submodules of $M$.  Then
       $M_\infty=\cup_{n=1}^{\infty} M_n$ is a submodule of $M$.
@@ -496,8 +496,8 @@ contain many different maximal elements.
       $k\geq n$, which proves that the chain of $M_i$ stabilizes,
       so the ascending chain condition holds for~$M$.
 
-    \item[$(2 \implies 3):$]
-      Suppose 3 were false, so there exists
+    \item[$\ref{itm:noeth2} \implies \ref{itm:noeth3}:$]
+      Suppose \ref{itm:noeth3} were false, so there exists
       a nonempty set~$S$ of submodules of~$M$ that does not
       contain a maximal element.  We will use~$S$ to construct
       an infinite ascending chain of submodules of~$M$ that
@@ -510,8 +510,9 @@ contain many different maximal elements.
       produce an infinite ascending chain of submodules of $M$,
       which contradicts the ascending chain condition.
 
-    \item[$(3 \implies 1):$]
-      Suppose 1 is false, so there is a submodule $M'$ of~$M$ that
+    \item[$\ref{itm:noeth3} \implies \ref{itm:noeth1}:$]
+      Suppose \ref{itm:noeth1} is false,
+      so there is a submodule $M'$ of~$M$ that
       is not finitely generated.  We will show that the set~$S$ of
       all finitely generated submodules of $M'$ does not
       have a maximal element, which will be a contradiction.
@@ -1465,11 +1466,11 @@ Oa.index_in(OK)
   Which of the following rings are orders in the given
   number field, i.e. orders in the ring of integers of the
   given number field.
-  \begin{enumerate}
-    \item[(a)] The ring $R = \ZZ[i]$ in the number field $\QQ(i)$.
-    \item[(b)] The ring $R = \ZZ[i/2]$ in the number field $\QQ(i)$.
-    \item[(c)] The ring $R = \ZZ[17i]$ in the number field $\QQ(i)$.
-    \item[(d)] The ring $R = \ZZ[i]$ in the number field $\QQ(\sqrt[4]{-1})$.
+  \begin{enumerate}[label=(\alph*)]
+    \item The ring $R = \ZZ[i]$ in the number field $\QQ(i)$.
+    \item The ring $R = \ZZ[i/2]$ in the number field $\QQ(i)$.
+    \item The ring $R = \ZZ[17i]$ in the number field $\QQ(i)$.
+    \item The ring $R = \ZZ[i]$ in the number field $\QQ(\sqrt[4]{-1})$.
   \end{enumerate}
 \end{exercise}
 %\begin{solution}
@@ -1588,7 +1589,7 @@ transformation $\ell_a:L\to L$.  (The transformation $\ell_a$ is
 $K$-linear because $L$ is commutative.)
 
 \begin{example}\label{ex:matrix-of-multiplication-by-alpha}
-	Let $K = \QQ$ and $L = \QQ(\sqrt{5})$. Then $B = \{1,\sqrt{5}\}$ is a basis for 
+	Let $K = \QQ$ and $L = \QQ(\sqrt{5})$. Then $B = \{1,\sqrt{5}\}$ is a basis for
 	$\QQ(\sqrt{5})$ as a $\QQ$-vector space. So we can identify $\QQ(\sqrt{5})$
 	with $\QQ^2$ by
 	\[
@@ -1979,7 +1980,7 @@ $b_i$ are ``nearly orthogonal'' and ``short'' in
 the sense of the following theorem:
 \begin{theorem}
   We have
-  \begin{enumerate}
+  \begin{enumerate}[label=(\alph*)]
     \item
       $d(L) \leq \prod_{i=1}^n |b_i| \leq 2^{n(n-1)/4} d(L)$.
     \item
