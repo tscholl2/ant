@@ -1,54 +1,142 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Copyright: William Stein, 2007.
-%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[11pt]{book}
 
+\usepackage{amssymb,amsthm,amsfonts,amsmath}
 \usepackage{hyperref}
 \usepackage{graphicx}
-\usepackage[all]{xy}
 \usepackage{sage}
-\usepackage{tikz}
-
-\bibliographystyle{amsalpha}
-\input{macros}
-\hoffset=-0.05\textwidth
-\textwidth=1.1\textwidth
-\voffset=-0.05\textheight
-\textheight=1.1\textheight
+\usepackage{comment}
+\usepackage{tikz,tikz-cd}
+\usepackage{makeidx}
 \makeindex
-\renewcommand{\edit}[1]{}
-\newcommand{\zmod}[1]{{\Z/#1\Z{}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% DRAFT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{todonotes}
+\usepackage{lineno}
+\linenumbers
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% MACROS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\FF}{\mathbb{F}}
+
+\renewcommand{\P}{\mathfrak{P}}
+\newcommand{\p}{\mathfrak{p}}
+\newcommand{\q}{\mathfrak{q}}
+\newcommand{\sO}{\mathcal{O}}
+
+\DeclareMathOperator{\Trace}{Trace}
+\DeclareMathOperator{\Norm}{Norm}
+\DeclareMathOperator{\Disc}{Disc}
+\DeclareMathOperator{\Image}{im}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\tor}{tor}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Div}{Div}
+\DeclareMathOperator{\Vol}{Vol}
+\DeclareMathOperator{\Real}{Re}
+\DeclareMathOperator{\Imag}{Im}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Ord}{Ord}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Res}{res}
+\DeclareMathOperator{\Cores}{cores}
+\renewcommand{\H}{H}
+% Sha
+\DeclareFontFamily{U}{wncy}{}
+\DeclareFontShape{U}{wncy}{m}{n}{<->wncyr10}{}
+\DeclareSymbolFont{mcy}{U}{wncy}{m}{n}
+\DeclareMathSymbol{\Sha}{\mathord}{mcy}{"58}
+
+\newcommand{\Sage}{\texttt{Sage}}
+
+\newcommand{\isom}{\cong} % canonical isomorphism
+\newcommand{\ncisom}{\approx} % noncanonical isomorphism
+\newcommand{\Legendre}[2]{\left(\frac{#1}{#2}\right)}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{exercise}[theorem]{Exercise}
+\newenvironment{hint}{[\emph{Hint}:}{\!]}
+\newtheorem{warning}[theorem]{Warning}
+
+\theoremstyle{remark}
+\newtheorem{goal}[theorem]{Goal}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{remarks}[theorem]{Remarks}
+\newtheorem{example}[theorem]{Example}
+
+\newcommand{\ithm}[1]{\index{Theorem!#1}\index{#1 theorem}}
+\newcommand{\iprop}[1]{\index{Proposition!#1}\index{#1 proposition}}
+\newcommand{\ilem}[1]{\index{Lemma!#1}\index{#1 lemma}}
+\newcommand{\icor}[1]{\index{Corollary!#1}\index{#1 corollary}}
+\newcommand{\defn}[1]{{\em #1}\index{#1}}
+
+%\numberwithin{equation}{section}
+%\numberwithin{figure}{section}
+%\numberwithin{table}{section}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% DOCUMENT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \title{\Huge\bf\sc Algebraic Number Theory,\\a Computational Approach}
 \author{William Stein}
 
-%\includeonly{factoring}
-
 \begin{document}
 \maketitle
-\newpage
-\tableofcontents
-\newpage
+%\tableofcontents
 
-\include{preface}
-\include{intro}
+\frontmatter
+%\include{ch0} % preface
+\mainmatter
+%\include{ch1} % intro
+%\include{ch2} % commalg
+\include{ch3} % unique
+%\include{ch4} %  factoring
+%\include{ch5} % crt
+%\include{ch6} % disc
+%\include{ch7} % classgroup
+%\include{ch8} % dirichlet
+%\include{ch9} % decomp
+%\include{ch10} % galrep
+%\include{ch11} % cohomology
+%\include{ch12} % weakmw
 
-\include{commalg}
-\include{unique}
-\include{factoring}
-\include{crt}
-\include{disc}
-\include{classgroup}
-\include{dirichlet}
-\include{decomp}
-\include{galrep}
-\include{cohomology}
-\include{weakmw}
-
+\backmatter
+\printindex
+\bibliographystyle{amsalpha}
 \bibliography{biblio}
-\label{page:end}
-
-\newcommand{\nn}[1]{{\bf #1}}
 
 \end{document}
