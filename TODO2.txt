@@ -1,0 +1,6 @@
+enumeration consistency:
+
+- exercises: (a) > (i)
+- theorem statements: (1)
+- theorem hypotheses: (i)
+- algorithms (1)

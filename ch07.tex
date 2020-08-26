@@ -120,7 +120,7 @@ Theorem~\ref{thm:finiteclassgrp} to compute $C_K$ in simple cases.
 	Thus $(2,\sqrt{10})$ defines a nontrivial element of the class group,
 	and it has order~$2$ since its square is the principal ideal $2\sO_K$.
 	Thus $2\mid \#C_K$.
-	
+
 	To find the integral ideals of norm $3$, we
 	factor $x^2-10$ modulo~$3$, and see that
 	$$
@@ -141,7 +141,7 @@ Theorem~\ref{thm:finiteclassgrp} to compute $C_K$ in simple cases.
 	=  (3, 4+\sqrt{10}),
 	$$
 	so the classes over~$3$ are equal.
-	
+
 	In summary, we now know that every element of $C_K$ is equivalent to one of
 	$$
 	(1),\quad (2,\sqrt{10}), \quad \text{ or } \quad (3,2+\sqrt{10}).
@@ -220,7 +220,7 @@ basis for~$L$.
 	By convexity, the average $\frac{1}{2}(P_1-P_2)$ of $P_1$ and $-P_2$
 	is also in $\frac{1}{2}S$.  Thus $0 \neq P_1 - P_2 \in S \cap L$,
 	as claimed.
-	
+
 	Next assume that $\Vol(S) = 2^n\cdot \Vol(V/L)$.  Then for all
 	$\varepsilon > 0$ there is $0\neq Q_\varepsilon \in L \cap (1 + \varepsilon) S$,
 	since $\Vol((1 + \varepsilon)S) > \Vol(S) = 2^n \cdot \Vol(V/L)$.
@@ -346,7 +346,7 @@ Let $\sigma:K \to V=\RR^n$ be the embedding
 	$$
 	f(ax_1, \dots,  ax_n) = |a|^n f(x_1,\dots, x_n).
 	$$
-	
+
 	Let $S\subset V$ be any fixed choice of closed, bounded, convex, subset with
 	positive volume that is symmetric with respect to the origin.
 	Since~$S$ is closed and bounded,
@@ -354,7 +354,7 @@ Let $\sigma:K \to V=\RR^n$ be the embedding
 	M = \max\{f(x) : x \in S\}
 	$$
 	exists.
-	
+
 	Suppose~$I$ is any  fractional ideal of $\sO_K$.  Our goal
 	is to prove that there is an integral ideal $aI$ with small norm. We
 	will do this by finding an appropriate $a\in I^{-1}$.
@@ -406,8 +406,8 @@ Let $\sigma:K \to V=\RR^n$ be the embedding
 	|x_1| + \cdots |x_{r}| +
 	2 \sum_{v=r+1}^{r+s} \sqrt{x_v^2 + x_{v+s}^2} \leq 1.
 	$$
-	\begin{enumerate}
-		\item Prove that $S$ is convex and that $M=n^{-n}$, where 
+	\begin{enumerate}[label=(\alph*)]
+		\item Prove that $S$ is convex and that $M=n^{-n}$, where
 		$$
 		M = \max\left\{
 		\left|x_1 \cdots x_r
@@ -415,7 +415,7 @@ Let $\sigma:K \to V=\RR^n$ be the embedding
 		\colon (x_1,\dots, x_n) \in S
 		\right\}.
 		$$
-		
+
 		\begin{hint}
 			For convexity, use the triangle inequality and that for
 			$0\leq \lambda \leq 1$, we have
@@ -425,7 +425,7 @@ Let $\sigma:K \to V=\RR^n$ be the embedding
 				+ (\lambda y_1 + (1 - \lambda)y_2)^2}
 			\end{align*}
 			for $0\leq \lambda \leq 1$.  In polar coordinates this last inequality
-			is 
+			is
 			$$
 			\lambda r_1 + (1-\lambda)r_2 \geq  \sqrt{
 				\lambda^2 r_1^2
@@ -442,9 +442,9 @@ Let $\sigma:K \to V=\RR^n$ be the embedding
 		D_{\ell,m}(t) = \int \cdots \int_{\mathcal{R}_{\ell,m}(t)}
 		y_1 \cdots y_m dx_1 \cdots dx_{\ell} dy_1 \cdots dy_m
 		$$
-		and 
+		and
 		$\mathcal{R}_{\ell,m}(t)$ is given by $x_{\rho}\geq 0$
-		($1\leq \rho\leq \ell$), $y_{\rho}\geq 0$ ($1\leq \rho\leq m$) and 
+		($1\leq \rho\leq \ell$), $y_{\rho}\geq 0$ ($1\leq \rho\leq m$) and
 		$$
 		x_1 + \cdots + x_{\ell} + 2(y_1+\cdots +y_m) \leq t.
 		$$
@@ -453,11 +453,12 @@ Let $\sigma:K \to V=\RR^n$ be the embedding
 		D_{\ell,m}(t) = \int_{0}^t D_{\ell-1,m}(t-x)dx
 		= \int_{0}^{t/2} D_{\ell,m-1}(t-2y)y dy
 		$$
-		and deduce by induction that 
+		and deduce by induction that
 		$$
 		D_{\ell,m}(t) = \frac{4^{-m}t^{\ell+2m}}{(\ell+2m)!}
 		$$
 	\end{enumerate}
+  \todo{add solution}
 \end{exercise}
 
 \begin{corollary}\icor{discrimant of number field $>1$}\label{co:disc>1}
@@ -492,12 +493,12 @@ is ramified at some prime.
 \begin{exercise}
 	For each of the following three fields, determining if there is
 	an order of discriminant $20$ contained in its ring of integers:
-	\begin{enumerate}
+	\begin{enumerate}[label=(\alph*)]
 		\item $K = \QQ(\sqrt{5})$
 		\item $K = \QQ(\sqrt[3]{2})$
 		\item $K = $ any extension of $\QQ$ of degree $2017$
 	\end{enumerate}
-	
+
 	\begin{hint}
 		Apply the exact form of our theorem about finiteness of class groups
 		to the unit ideal to show that the discriminant of a degree $2017$
@@ -697,7 +698,7 @@ for $K=\QQ(i), \QQ(\sqrt{5})$ and $\QQ(\sqrt{-6})$.
 	Also, $\p_2^2 = 2\sO_K$ and $\p_3^2=3\sO_K$, so
 	$\p_2$ and $\p_3$ define elements of order
 	dividing $2$ in $\Cl(K)$.
-	
+
 	Is either $\p_2$ or $\p_3$ principal?  Fortunately,
 	there is an easier norm trick that allows us to decide.
 	Suppose $\p_2 = (\alpha)$, where $\alpha=a+b\sqrt{-6}$.
@@ -713,7 +714,7 @@ for $K=\QQ(i), \QQ(\sqrt{5})$ and $\QQ(\sqrt{-6})$.
 	be principal.  By a similar argument, we see that $\p_3$
 	is not principal either.  Thus $\p_2$ and $\p_3$ define
 	elements of order $2$ in $\Cl(K)$.
-	
+
 	Does the class of $\p_2$ equal the class of $\p_3$?
 	Since $\p_2$ and $\p_3$ define classes of order~$2$,
 	we can decide this by finding the class of $\p_2\cdot \p_3$.

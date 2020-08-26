@@ -79,24 +79,24 @@ but none are transitive.
 \begin{exercise}
   Let $\alpha$ be a root of the irreducible polynomial $f(x) = x^5 - 6x + 3$ and
   let $K = \QQ(\alpha)$.
-  \begin{enumerate}
+  \begin{enumerate}[label=(\alph*)]
     \item
-    Use {\Sage} to verify that the Galois group $\Gal(\overline{K}/\QQ)$
-    has order $120$.
-    Warning: this command may take a long time to run.
-    Try to finish the second part of this exercise before your code
-    finishes.
-    %%%time
-    %R.<x> = ZZ[]
-    %f = x^5 - 6*x + 3
-    %K.<a> = NumberField(f)
-    %Kgc.<b> = K.galois_closure()
-  
+          Use {\Sage} to verify that the Galois group $\Gal(\overline{K}/\QQ)$
+          has order $120$.
+          Warning: this command may take a long time to run.
+          Try to finish the second part of this exercise before your code
+          finishes.
+          %%%time
+          %R.<x> = ZZ[]
+          %f = x^5 - 6*x + 3
+          %K.<a> = NumberField(f)
+          %Kgc.<b> = K.galois_closure()
+
     \item
-    One can show that $f$ has three real roots and two complex roots.
-    Show that $\Gal(\overline{K}/\QQ)$ contains an element of order $5$ and
-    an element of order $5$. Use this to argue that $\Gal(\overline{K})/\QQ$
-    has order $120$.
+          One can show that $f$ has three real roots and two complex roots.
+          Show that $\Gal(\overline{K}/\QQ)$ contains an element of order $5$ and
+          an element of order $5$. Use this to argue that $\Gal(\overline{K})/\QQ$
+          has order $120$.
   \end{enumerate}
   \begin{hint}
     Number fields in {\Sage} have a {\tt galois\_closure()} command that
@@ -118,8 +118,8 @@ but none are transitive.
 
 \begin{remark}
   Taking a limit using the maps $\Gal(\overline{\QQ}/\QQ)\to
-  \Gal(\QQ(\zeta_{p^r})/\QQ)$, we obtain a homomorphism $\Gal(\overline{\QQ}/\QQ)\to
-  \ZZ_p^*$, which is called the {\em $p$-adic cyclotomic character}.
+    \Gal(\QQ(\zeta_{p^r})/\QQ)$, we obtain a homomorphism $\Gal(\overline{\QQ}/\QQ)\to
+    \ZZ_p^*$, which is called the {\em $p$-adic cyclotomic character}.
 \end{remark}
 
 Compositums of Galois extensions are Galois.  For example, the
@@ -141,7 +141,7 @@ that we have associated to $K$.
     \item The group of fractional ideals of $\sO_K$.
     \item The class group $\Cl(K)$.
     \item The set $S_\p$ of prime ideals of $\sO_L$ lying over a given nonzero
-    prime ideal $\p$ of $\sO_K$, i.e., the prime divisors of $\p\sO_L$.
+          prime ideal $\p$ of $\sO_K$, i.e., the prime divisors of $\p\sO_L$.
   \end{itemize}
 \end{exercise}
 
@@ -184,14 +184,14 @@ factorization. First we will introduce some standard terminology.
   Let $M/L/K$ be a tower of number fields. Let $\p$ be a prime
   in $\sO_K$, $\q$ a prime in $\sO_L$ lying over $\p$, and $\P$ a prime
   in $\sO_M$ lying over $\q$.
-  \begin{enumerate}
-    \item[(a)] Show that $e(\P/\p)=e(\P/\q) \cdot e(\q/\p)$.
-    \item[(b)] Show that $f(\P/\p)=f(\P/\q) \cdot f(\q/\p)$.
-    \item[(c)] Let $g_{L/K}(\p)$, $g_{M/K}(\p)$ be the number of primes
-    of $\sO_L$, $\sO_M$ lying over $\p$ respectively. Show that
-    \[
-      g_{M/K}(\p) = \sum\limits_{\q \text{ divides } \p\sO_L} g_{L/K}(\q).
-    \]
+  \begin{enumerate}[label=(\alph*)]
+    \item Show that $e(\P/\p)=e(\P/\q) \cdot e(\q/\p)$.
+    \item Show that $f(\P/\p)=f(\P/\q) \cdot f(\q/\p)$.
+    \item Let $g_{L/K}(\p)$, $g_{M/K}(\p)$ be the number of primes
+          of $\sO_L$, $\sO_M$ lying over $\p$ respectively. Show that
+          \[
+            g_{M/K}(\p) = \sum\limits_{\q \text{ divides } \p\sO_L} g_{L/K}(\q).
+          \]
   \end{enumerate}
 \end{exercise}
 
@@ -206,7 +206,7 @@ In fact, much more is true.
 
 \begin{theorem}\label{thm:transitive}\ithm{transitive Galois action}
   Suppose $L/K$ is a Galois extension of number fields,
-  and let $\p$ be a prime of $\sO_K$. 
+  and let $\p$ be a prime of $\sO_K$.
   Write $\p\sO_K = \prod_{i=1}^g \P_i^{e_i}$, and let $f_i = f(\P_i/\p)$.
   Then $G = \Gal(L/K)$ acts transitively on the set $S_\p$ of primes $\P_i$,
   and
@@ -223,7 +223,7 @@ In fact, much more is true.
   For simplicity, we will give the proof only for an extension $K/\QQ$, but
   the proof works in general. Suppose $p \in \ZZ$ and
   $p\sO_K = \p_1^{e_1}\cdots \p_g^{e_g}$, and $S = \{\p_1,\ldots, \p_g\}$.  We
-  will first prove that $G = \Gal(K/\QQ)$ acts transitively on $S$. 
+  will first prove that $G = \Gal(K/\QQ)$ acts transitively on $S$.
   Let $\p = \p_i$ for some~$i$.
   Recall Lemma~\ref{lem:magica} which we proved long ago using the
   Chinese Remainder Theorem (Theorem~\ref{thm:crt}). It showed there exists
@@ -256,7 +256,7 @@ In fact, much more is true.
   Choose some $j$ and suppose that $k\neq j$ is another index.  Because
   $G$ acts transitively, there exists $\sigma\in G$ such that
   $\sigma(\p_k)=\p_j$.  Applying $\sigma$ to the factorization $p\sO_K =
-  \prod_{i=1}^g \p_i^{e_i}$, we see that
+    \prod_{i=1}^g \p_i^{e_i}$, we see that
   \[
     \prod_{i=1}^g \p_i^{e_i} = \prod_{i=1}^g \sigma(\p_i)^{e_i}.
   \]
@@ -270,8 +270,8 @@ In fact, much more is true.
   and noting $\#(\sO_K/(\p^m)) = \#(\sO_K/\p)^m$
   (see Exercise~\ref{ex:residuefieldofpower}), that
   \begin{align*}
-    [K:\QQ]&= \dim_{\ZZ} \sO_K = \dim_{\FF_p} \sO_K/p\sO_K \\
-    &= \dim_{\FF_p} \left(\bigoplus_{i=1}^g \sO_K/\p_i^{e_i}\right)
+    [K:\QQ] & = \dim_{\ZZ} \sO_K = \dim_{\FF_p} \sO_K/p\sO_K                 \\
+            & = \dim_{\FF_p} \left(\bigoplus_{i=1}^g \sO_K/\p_i^{e_i}\right)
     = \sum_{i=1}^g e_i f_i
     = efg,
   \end{align*}
@@ -285,32 +285,32 @@ and a cubic field and its Galois closure.
 
 \subsubsection{Quadratic Extensions}
 
-Suppose $K/\QQ$ is a quadratic field. 
+Suppose $K/\QQ$ is a quadratic field.
 Then $K$ is Galois, so for each prime $p\in\ZZ$ we have $2 = efg$.
 There are exactly three possibilities for $e$, $f$ and $g$ :
 \begin{description}
   \item[\normalfont{(Ramified):}] $e=2$, $f=g=1$: The prime $p$ \emph{ramifies} in
-  $\sO_K$, which means $p\sO_K = \p^2$.  Let $\alpha$ be a generator for $\sO_K$ and
-  $h \in \ZZ[x]$ a minimal polynomial for $\alpha$.
-  By Theorem~\ref{thm:fac1} a prime $p$ is ramified in $\sO_K$ if and only if
-  $h$ has a double root modulo~$p$, which is equivalent to $p$ dividing
-  the discriminant of $h$. This shows there are only finitely many ramified
-  primes.
+        $\sO_K$, which means $p\sO_K = \p^2$.  Let $\alpha$ be a generator for $\sO_K$ and
+        $h \in \ZZ[x]$ a minimal polynomial for $\alpha$.
+        By Theorem~\ref{thm:fac1} a prime $p$ is ramified in $\sO_K$ if and only if
+        $h$ has a double root modulo~$p$, which is equivalent to $p$ dividing
+        the discriminant of $h$. This shows there are only finitely many ramified
+        primes.
 
   \item[\normalfont{(Inert):}] $e=1$, $f=2$, $g=1$: The prime $p$ is \emph{inert} in $\sO_K$,
-  which means $p\sO_K = \p$ is prime.  It is a nontrivial theorem that
-  this happens half of the time,
-  as we will see illustrated below for a particular example.
+        which means $p\sO_K = \p$ is prime.  It is a nontrivial theorem that
+        this happens half of the time,
+        as we will see illustrated below for a particular example.
 
   \item[\normalfont{(Split):}] $e=f=1$, $g=2$: The prime $p$ \emph{splits} in $\sO_K$,
-  which means $p\sO_K = \p_1\p_2$ with $\p_1\neq \p_2$.  This happens the other
-  half of the time.
+        which means $p\sO_K = \p_1\p_2$ with $\p_1\neq \p_2$.  This happens the other
+        half of the time.
 \end{description}
 
 \begin{example}\label{exam:decompQsqrt5}
   Let $K=\QQ(\sqrt{5})$, so $\sO_K=\ZZ[\gamma]$, where
   $\gamma=(1+\sqrt{5})/2$.  Then $p=5$ is ramified, since $5\sO_K =
-  (\sqrt{5})^2$.  More generally, the order $\ZZ[\sqrt{5}]$ has index $2$
+    (\sqrt{5})^2$.  More generally, the order $\ZZ[\sqrt{5}]$ has index $2$
   in $\sO_K$, so for any prime $p\neq 2$ we can determine the
   factorization of $p$ in $\sO_K$ by finding the factorization of the
   polynomial $x^2-5\in \FF_p[x]$. The polynomial $x^2-5$ splits as a
@@ -324,7 +324,7 @@ There are exactly three possibilities for $e$, $f$ and $g$ :
     = (-1)^{\frac{5-1}{2}\cdot \frac{p-1}{2}} \cdot \Legendre{p}{5}
     = \Legendre{p}{5}
     = \begin{cases}
-      +1 & \text{ if } p \equiv \pm 1\pmod{5} \\
+      +1 & \text{ if } p \equiv \pm 1\pmod{5}  \\
       -1 & \text{ if } p \equiv \pm 2\pmod{5}.
     \end{cases}
   \]
@@ -333,8 +333,8 @@ There are exactly three possibilities for $e$, $f$ and $g$ :
   modulo $5$. It is a theorem of Dirichlet, which was massively
   generalized by Chebotarev, that $p \equiv \pm 1$ half the time
   and $p \equiv \pm 2$ the other half the time.\footnote{
-  For the actual statement and a proof of this theorem,
-  see \cite{neukirch1999} Theorem~VII.13.4.}
+    For the actual statement and a proof of this theorem,
+    see \cite{neukirch1999} Theorem~VII.13.4.}
 \end{example}
 
 \subsubsection{The Cube Root of Two}
@@ -397,13 +397,13 @@ where the $\P_i$ ranger over the primes of $\sO_L$ laying over $\p$.
 
 \begin{exercise}[See {\cite[Ch.~4, Exercise~24]{marcus1977number}}]
   Prove the following properties.
-  \begin{enumerate}
-    \item[(a)] If $\p$ it totally ramified in $L$
-    then it is totally ramified in $K$.
+  \begin{enumerate}[label=(\alph*)]
+    \item If $\p$ it totally ramified in $L$
+          then it is totally ramified in $K$.
 
-    \item[(b)] Let $L'$ be another extension of $K$.
-    If $\p$ is totally ramified in $L$ and unramified in $L'$
-    then $L\cap L' = K$.
+    \item Let $L'$ be another extension of $K$.
+          If $\p$ is totally ramified in $L$ and unramified in $L'$
+          then $L\cap L' = K$.
   \end{enumerate}
 \end{exercise}
 
@@ -543,11 +543,11 @@ splits completely and does not ramify in $K^D/\QQ$.
   lying over $\q$ so by Theorem~\ref{thm:transitive},
   \begin{align*}
     e(\p/\q) \cdot f(\p/\q) = [K:F]
-    &= \frac{[K:\QQ]}{[F:\QQ]}
+     & = \frac{[K:\QQ]}{[F:\QQ]}
     \\
-    &= \frac{e(\p/p) \cdot f(\p/p) \cdot g}{[F:\QQ]}
+     & = \frac{e(\p/p) \cdot f(\p/p) \cdot g}{[F:\QQ]}
     \\
-    &= e(\p/p) \cdot f(\p/p).
+     & = e(\p/p) \cdot f(\p/p).
   \end{align*}
   Now $e(\p/\q)\leq e(\p/p)$ and $f(\p/\q)\leq f(\p/p)$, so
   we must have $e(\p/\q)=e(\p/p)$ and $f(\p/\q)=f(\p/p)$.
@@ -566,11 +566,11 @@ and the number of primes at each step of the tower.
   \begin{tabular}{ccc|cc}
     \text{Ramification ($e$)} & \text{Inertia ($f$)} & \text{Splitting ($g$)} & \text{Primes} & \text{Fields} \\
     \hline
-    &  &  & $\p$ & $K$ \\
-    $e(\p/p)$ & $f(\p/p)$ & $1$ & $\vert$ & $\vert$ \\
-    &  &  & $\q$ & $K^D$ \\
-    $1$ & $1$ & $[K^D : \QQ]$ & $\vert$ & $\vert$ \\
-    &  &  & $p$ &  $\QQ$
+                              &                      &                        & $\p$          & $K$           \\
+    $e(\p/p)$                 & $f(\p/p)$            & $1$                    & $\vert$       & $\vert$       \\
+                              &                      &                        & $\q$          & $K^D$         \\
+    $1$                       & $1$                  & $[K^D : \QQ]$          & $\vert$       & $\vert$       \\
+                              &                      &                        & $p$           & $\QQ$
   \end{tabular}
   \caption{Decomposition in the fixed field $K^D$.}
   \label{tbl:decompfield}
@@ -578,17 +578,17 @@ and the number of primes at each step of the tower.
 
 \begin{exercise}
   Give an example of each of the following:
-  \begin{enumerate}
+  \begin{enumerate}[label=(\alph*)]
     \item A finite nontrivial Galois extension $K$
-    of $\QQ$ and a prime ideal $\p$ such that $D_\p = \Gal(K/\QQ)$.
+          of $\QQ$ and a prime ideal $\p$ such that $D_\p = \Gal(K/\QQ)$.
     \item A finite nontrivial Galois extension $K$ of
-    $\QQ$ and a prime ideal $\p$ such that $D_\p$ has order~$1$.
+          $\QQ$ and a prime ideal $\p$ such that $D_\p$ has order~$1$.
     \item A finite Galois extension~$K$ of
-    $\QQ$ and a prime ideal $\p$ such that $D_\p$ is not a normal
-    subgroup of $\Gal(K/\QQ)$.
+          $\QQ$ and a prime ideal $\p$ such that $D_\p$ is not a normal
+          subgroup of $\Gal(K/\QQ)$.
     \item A finite Galois extension $K$ of
-    $\QQ$ and a prime ideal $\p$ such that $I_\p$ is not a normal
-    subgroup of $\Gal(K/\QQ)$.
+          $\QQ$ and a prime ideal $\p$ such that $I_\p$ is not a normal
+          subgroup of $\Gal(K/\QQ)$.
   \end{enumerate}
 \end{exercise}
 
@@ -616,24 +616,24 @@ of Galois groups for finite fields.
 
 \begin{exercise}\label{ex:frob}
   \hfill
-  \begin{enumerate}
+  \begin{enumerate}[label=(\alph*)]
     \item Show the map $\Frob_p$ is in fact a field homomorphism,
-    that is $\Frob_p(a + b) = \Frob_p(a) + \Frob_p(b)$
-    and $\Frob_p(ab) = \Frob_p(a)\Frob_p(b)$.
+          that is $\Frob_p(a + b) = \Frob_p(a) + \Frob_p(b)$
+          and $\Frob_p(ab) = \Frob_p(a)\Frob_p(b)$.
     \item Suppose $k = \FF_p$. Then show $\Frob_p = id$, i.e.,
-    $a^p = a$ for any $a\in\FF_p$.
+          $a^p = a$ for any $a\in\FF_p$.
     \item Suppose $k = \FF_{q}$ where $q=p^f$ for some $f\geq 1$.
-    Show that $\Frob_p:k\to k$ is an automorphism.
+          Show that $\Frob_p:k\to k$ is an automorphism.
     \item Continuing the previous part, note that by
-    Exercise~\ref{ex:finitesubgroupoffieldcyclic}, $k^*$ is cyclic.
-    Let $a\in k$ be a generator for $k^*$,
-    so $a$ has multiplicative order $p^f-1$ and $k = \FF_p(a)$.
-    Show that
-    \[
-      \Frob_p^n(a) = a^{p^n} = a
-      \quad\Leftrightarrow\quad (p^f - 1) \mid p^n - 1
-      \quad\Leftrightarrow\quad f \mid n
-    \]
+          Exercise~\ref{ex:finitesubgroupoffieldcyclic}, $k^*$ is cyclic.
+          Let $a\in k$ be a generator for $k^*$,
+          so $a$ has multiplicative order $p^f-1$ and $k = \FF_p(a)$.
+          Show that
+          \[
+            \Frob_p^n(a) = a^{p^n} = a
+            \quad\Leftrightarrow\quad (p^f - 1) \mid p^n - 1
+            \quad\Leftrightarrow\quad f \mid n
+          \]
   \end{enumerate}
 \end{exercise}
 
@@ -743,7 +743,7 @@ We have the following characterization of $I_\p$.
 \end{proposition}
 \begin{proof}
   By definition $I_\p = \{\sigma\in D_\p \colon \sigma(a) \equiv
-  a\pmod{\p}\text{ for all } a\in\sO_K\}$, so it suffices to show that
+    a\pmod{\p}\text{ for all } a\in\sO_K\}$, so it suffices to show that
   if $\sigma\not\in D_\p$, then there exists $a\in\sO_K$ such that
   $\sigma(a) \not\equiv a\pmod{\p}$.  If $\sigma\not\in D_\p$, then
   $\sigma^{-1}\not\in D_\p$, so $\sigma^{-1}(\p)\neq \p$.  Since both
@@ -754,11 +754,11 @@ We have the following characterization of $I_\p$.
 
 \begin{exercise}
   Let $I = I_\p$ be the inertia subgroup as above. Show that
-  \begin{enumerate}
+  \begin{enumerate}[label=(\alph*)]
     \item $K^I$ is the largest subfield of $K$ such that $p$ is unramified
-    in $K^I$.
+          in $K^I$.
     \item $K^I$ is the smallest subfield of $K$ such that $\p$ is totally
-    ramified over $\p \cap K^I$.
+          ramified over $\p \cap K^I$.
   \end{enumerate}
 \end{exercise}
 
@@ -769,57 +769,57 @@ Compare this with Table~\ref{tbl:decompfield}.
 \begin{figure}
   \centering
   \begin{tikzpicture}[scale = 1.5]
-  \node at (1,0) (Q) {$\QQ$};
-  \node at (1,2) (K^D) {$K^D$};
-  \node at (1,4) (K^I) {$K^I$};
-  \node at (1,6) (K) {$K$};
+    \node at (1,0) (Q) {$\QQ$};
+    \node at (1,2) (K^D) {$K^D$};
+    \node at (1,4) (K^I) {$K^I$};
+    \node at (1,6) (K) {$K$};
 
-  \draw (K) -- (K^I) node[right,midway]{$e$};
-  \draw (K^I) -- (K^D) node[right,midway]{$f$};
-  \draw (K^D) -- (Q) node[right,midway]{$g$};
+    \draw (K) -- (K^I) node[right,midway]{$e$};
+    \draw (K^I) -- (K^D) node[right,midway]{$f$};
+    \draw (K^D) -- (Q) node[right,midway]{$g$};
 
-  \node at (3,5) (I) {$I$};
-  \node at (3,3) (D/I) {$D/I \cong \Gal(K^I/K^D)$};
-  \node at (0,4) (D) {$D$};
+    \node at (3,5) (I) {$I$};
+    \node at (3,3) (D/I) {$D/I \cong \Gal(K^I/K^D)$};
+    \node at (0,4) (D) {$D$};
 
-  \draw (K^D) to [out=-180,in=-90](D);
-  \draw (D) to [out=90,in=180](K);
+    \draw (K^D) to [out=-180,in=-90](D);
+    \draw (D) to [out=90,in=180](K);
 
-  \draw (K^D) to [out=0,in=-90](D/I);
-  \draw (D/I) to [out=90,in=0](K^I);
+    \draw (K^D) to [out=0,in=-90](D/I);
+    \draw (D/I) to [out=90,in=0](K^I);
 
-  \draw (K^I) to [out=0,in=-90](I);
-  \draw (I) to [out=90,in=0](K);
+    \draw (K^I) to [out=0,in=-90](I);
+    \draw (I) to [out=90,in=0](K);
 
-  \node[draw] at (5,5) (K^I-Qefg) {$f = g = 1$};
-  \node[draw] at (5,3) (K^D-K^Iefg) {$e = g = 1$};
-  \node[draw] at (5,1) (QK^Defg) {$e = f = 1$};
+    \node[draw] at (5,5) (K^I-Qefg) {$f = g = 1$};
+    \node[draw] at (5,3) (K^D-K^Iefg) {$e = g = 1$};
+    \node[draw] at (5,1) (QK^Defg) {$e = f = 1$};
 
-  \node at (-2,0) (p) {$p$};
+    \node at (-2,0) (p) {$p$};
 
-  \node at (-2.5,2) (q1) {\huge$\boldsymbol{\cdot}$};
-  \node at (-2.0,2) (q2) {\huge$\boldsymbol{\cdot}$};
-  \node at (-1.5,2) (q3) {\huge$\boldsymbol{\cdot}$};
+    \node at (-2.5,2) (q1) {\huge$\boldsymbol{\cdot}$};
+    \node at (-2.0,2) (q2) {\huge$\boldsymbol{\cdot}$};
+    \node at (-1.5,2) (q3) {\huge$\boldsymbol{\cdot}$};
 
-  \draw (p) -- (q1);
-  \draw (p) -- (q2);
-  \draw (p) -- (q3);
+    \draw (p) -- (q1);
+    \draw (p) -- (q2);
+    \draw (p) -- (q3);
 
-  \node at (-2.5,4) (P1) {\large$\bullet$};
-  \node at (-2.0,4) (P2) {\large$\bullet$};
-  \node at (-1.5,4) (P3) {\large$\bullet$};
+    \node at (-2.5,4) (P1) {\large$\bullet$};
+    \node at (-2.0,4) (P2) {\large$\bullet$};
+    \node at (-1.5,4) (P3) {\large$\bullet$};
 
-  \draw (q1) -- (P1);
-  \draw (q2) -- (P2);
-  \draw (q3) -- (P3);
+    \draw (q1) -- (P1);
+    \draw (q2) -- (P2);
+    \draw (q3) -- (P3);
 
-  \node at (-2.5,6) (Q1) {\large$\bullet^{\text{\large $e$}}$\!\!\!\!};
-  \node at (-2.0,6) (Q2) {\large$\bullet^{\text{\large $e$}}$\!\!\!\!};
-  \node at (-1.5,6) (Q3) {\large$\bullet^{\text{\large $e$}}$\!\!\!\!};
+    \node at (-2.5,6) (Q1) {\large$\bullet^{\text{\large $e$}}$\!\!\!\!};
+    \node at (-2.0,6) (Q2) {\large$\bullet^{\text{\large $e$}}$\!\!\!\!};
+    \node at (-1.5,6) (Q3) {\large$\bullet^{\text{\large $e$}}$\!\!\!\!};
 
-  \draw (P1) -- (Q1);
-  \draw (P2) -- (Q2);
-  \draw (P3) -- (Q3);
+    \draw (P1) -- (Q1);
+    \draw (P2) -- (Q2);
+    \draw (P3) -- (Q3);
   \end{tikzpicture}
   \caption{Splitting of $p$ in a Galois extension $K/\QQ$.}
   \label{fig:splitting-of-p}
@@ -844,7 +844,7 @@ for all $a \in \sO_K$ we have
   With the notation above, prove that $\Frob_\p$ is unique.
   That is, if $\sigma$ satisfies $\sigma(a) \equiv a^p \pmod{\p}$
   for all $a\in\sO_K$ then $\sigma = \Frob_\p$.
-  
+
   \begin{hint}
     First show $\sigma\in D_\p$, then argue as in
     the proof of Proposition~\ref{prop:charip}.
@@ -938,8 +938,8 @@ field of $\ker(\rho)$, then $K/\QQ$ is a finite Galois extension.
 We have a diagram
 \[
   \begin{tikzcd}
-  \Gal(\overline{\QQ}/\QQ) \arrow{rr}{\rho} \arrow{dr} & & \GL_n(\CC) \\
-  & \Gal(K/\QQ) \arrow[hook]{ur}[swap]{\rho'}
+    \Gal(\overline{\QQ}/\QQ) \arrow{rr}{\rho} \arrow{dr} & & \GL_n(\CC) \\
+    & \Gal(K/\QQ) \arrow[hook]{ur}[swap]{\rho'}
   \end{tikzcd}
 \]
 
@@ -955,7 +955,7 @@ We have a diagram
   This is essentially the same warning as
   Warning~\ref{warn:galqtopology}, however it is worth
   pointing out to avoid mistakes.\footnote{
-  See \cite[pg.~1]{artinconjectureLectureNotes}.}
+    See \cite[pg.~1]{artinconjectureLectureNotes}.}
 \end{remark}
 
 \begin{exercise}\label{ex:nonopensbgpfiniteindexgalq}
@@ -982,22 +982,22 @@ We have a diagram
 
 \begin{exercise}
   Let $S_3$ by the symmetric group on three symbols, which has order $6$.
-  \begin{enumerate}
+  \begin{enumerate}[label=(\alph*)]
     \item \label{ex:a} Observe that $S_3\isom D_3$, where $D_3$ is
-    the dihedral group of order $6$, which is the group of symmetries of
-    an equilateral triangle.
-    \item Use (\ref{ex:a}) to write down an explicit
-    embedding $S_3 \hookrightarrow \GL_2(\CC)$.
+          the dihedral group of order $6$, which is the group of symmetries of
+          an equilateral triangle.
+    \item Use part \ref{ex:a} to write down an explicit
+          embedding $S_3 \hookrightarrow \GL_2(\CC)$.
     \item Let $K$ be the number field $\QQ(\sqrt[3]{2},\omega)$,
-    where $\omega^3=1$ is a nontrivial cube root of unity.  Show
-    that $K$ is a Galois extension with Galois group isomorphic to~$S_3$.
+          where $\omega^3=1$ is a nontrivial cube root of unity.  Show
+          that $K$ is a Galois extension with Galois group isomorphic to~$S_3$.
     \item We thus obtain a $2$-dimensional irreducible complex
-    Galois representation
-    \[
-      \rho:\Gal(\overline{\QQ}/\QQ) \to \Gal(K/\QQ) \isom S_3 \subset \GL_2(\CC).
-    \]
-    Compute a representative matrix of $\Frob_p$ and the characteristic polynomial
-    of $\Frob_p$ for $p=5,7,11,13$.
+          Galois representation
+          \[
+            \rho:\Gal(\overline{\QQ}/\QQ) \to \Gal(K/\QQ) \isom S_3 \subset \GL_2(\CC).
+          \]
+          Compute a representative matrix of $\Frob_p$ and the characteristic polynomial
+          of $\Frob_p$ for $p=5,7,11,13$.
   \end{enumerate}
 \end{exercise}
 
@@ -1006,7 +1006,7 @@ $\ker(\rho)$, so~$\rho$ factors through $\Gal(K/\QQ)$.  For each prime
 $p \in \ZZ$ that is not ramified in $K$, there is an element
 $\Frob_\p\in\Gal(K/\QQ)$ that is well-defined up to conjugation by
 elements of $\Gal(K/\QQ)$.  This means that $\rho'(\Frob_p)\in
-\GL_n(\CC)$ is well-defined up to conjugation.  Thus the characteristic
+  \GL_n(\CC)$ is well-defined up to conjugation.  Thus the characteristic
 polynomial $F_p(x) \in \CC[x]$ of $\rho'(\Frob_p)$ is a well-defined
 invariant of $p$ and $\rho$.  Let
 \[

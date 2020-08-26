@@ -52,7 +52,7 @@ computational advantages to other equations for curves
 \begin{exercise}
   Look up the Riemann-Roch theorem in a book on algebraic curves
   (e.g. \cite{hartshorne,liu2006algebraic}).
-  \begin{enumerate}
+  \begin{enumerate}[label=(\alph*)]
     \item Write it down in your own words.
     \item Let $E$ be an elliptic curve over a field~$K$.
     Use the Riemann-Roch theorem to deduce that the natural map
@@ -123,7 +123,7 @@ group with identity element~$\sO$.\footnote{
   this section. For a more detailed and technical explanation of
   the group structure for elliptic curves
   see \cite[Ch.~III.2]{silverman:aec}.
-} 
+}
 If we embed $E$ in the projective plane, then this group is determined
 by the condition that three points sum to the zero element $\sO$
 if and only if they lie on a common line (some care needs to be taken
@@ -164,11 +164,11 @@ G.show()
 !\includegraphics[width=0.925\textwidth]{img/grouplaw}
 \end{sageout}
 \end{sagecode} %link
-  
+
   \noindent
   Iterating the group operation often leads quickly to
   very complicated points:
-  
+
 \begin{sagecode}
 \begin{sagecell}
 7*E(0,2)
@@ -196,7 +196,7 @@ G.show()
   Show that the points of order two are exactly
   the points on $E$ with $y$-coordinate equal to
   $0$.
-  
+
   \begin{hint}
     Recall that a point $P$ has order $2$ if
     $P + P + \sO = \sO$, which means the tangent line
@@ -444,7 +444,7 @@ So we need to show the points $E(\CC)[n]$ are actually defined over
 $\overline{K}$. Note that $E(\CC)[n]$ is finite and invariant under
 $\Aut(\CC/\overline{K})$ for the same reason as $E[n]$ was invariant under
 $\Gal(\overline{K}/K)$ (point addition is defined by algebraic formulas with
-coefficients in $K$). It follows that $E(\CC)[n]$ is indeed defined over 
+coefficients in $K$). It follows that $E(\CC)[n]$ is indeed defined over
 $E(\overline{K})$ so the arguments above show that
 $E[n] \approx \left(\ZZ/n\ZZ\right)^2$.
 
@@ -476,7 +476,7 @@ $E[n] \approx \left(\ZZ/n\ZZ\right)^2$.
     K(E[n]) = K(\{a,b \colon (a,b) \in E[n]\}).
   \]
   Show that $K(E[n])/K$ is a finite Galois extension.
-  
+
   Hint: By the arguments above $\#E[n] = n^2$ which shows
   the extension is finite. Next recall that $E[n]$ is left
   invariant by the action of $\Gal(\overline{K}/K)$. What
@@ -619,18 +619,18 @@ is the representation $\overline{\rho}_{E,p}$, which we defined above, which
 is why we denoted it by $\overline{\rho}_{E,p}$.
 
 \begin{exercise}
-  Let $E$ be the elliptic curve $y^2=x^3+x+1$.  Let 
-  $E[2]$  be the group of points of order dividing~$2$ on~$E$.  Let 
+  Let $E$ be the elliptic curve $y^2=x^3+x+1$.  Let
+  $E[2]$  be the group of points of order dividing~$2$ on~$E$.  Let
   \[
     \overline{\rho}_{E,2}:\Gal(\overline{\QQ}/\QQ) \to \Aut(E[2])
   \]
   be the mod~$2$ Galois representation associated to~$E$.
-  \begin{enumerate}
+  \begin{enumerate}[label=(\alph*)]
     \item Find the fixed field $K$ of $\ker(\overline{\rho}_{E,2})$.
     \item Is $\overline{\rho}_{E,2}$ surjective?
     \item Find the group $\Gal(K/\QQ)$.
     \item Which primes are ramified in~$K$?
-    \item Let $I$ be an inertia group above $2$, which is one of the ramified 
+    \item Let $I$ be an inertia group above $2$, which is one of the ramified
     primes. Determine $E[2]^I$ explicitly for your choice of~$I$. What is the
     characteristic polynomial of $\Frob_2$ acting on $E[2]^I$.
     \item What is the characteristic polynomial of $\Frob_3$ acting
@@ -724,7 +724,7 @@ The complex {\em upper half plane} is
 $\mathfrak{h}  = \{z  \in \CC : \Im(z) > 0\}$.
 A {\em cuspidal modular form} $f$ of level~$N$ (of weight~$2$) is a holomorphic
 function $f : \mathfrak{h} \to \CC$ such that $\lim_{z\to i\infty} f(z) = 0$ and
-for every integer matrix $\begin{pmatrix} a & b \\ c & d \end{pmatrix}$ with 
+for every integer matrix $\begin{pmatrix} a & b \\ c & d \end{pmatrix}$ with
 determinant~$1$ and $c\equiv 0 \pmod{N}$, we have
 \[
   f\left( \frac{az + b}{cz + d} \right) = (cz+d)^{-2} f(z).
