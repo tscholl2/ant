@@ -24,21 +24,29 @@ kernel is the ideal $(f)$.  Thus we obtain~$n$ embeddings of $K\isom
   We compute the embeddings listed above for $K=\QQ(\sqrt[3]{2})$.
 \begin{sagecode}
 \begin{sagecell}
-K = QQ[2^(1/3)]; K
+K.<cuberoot2> = NumberField(x^3 - 2); K
 \end{sagecell}
 \begin{sageout}
-Number Field in a with defining polynomial x^3 - 2
+Number Field in cuberoot2 with defining polynomial x^3 - 2
 \end{sageout}
 \begin{sagecell}
 K.complex_embeddings()
 \end{sagecell}
 \begin{sageout}
-[Ring morphism: ...
-Defn: a |--> -0.629960524947 - 1.09112363597*I,
-Ring morphism: ...
-Defn: a |--> -0.629960524947 + 1.09112363597*I,
-Ring morphism: ...
-Defn: a |--> 1.25992104989]
+[
+  Ring morphism:
+    From: Number Field in cuberoot2 with defining polynomial x^3 - 2
+    To:   Complex Field with 53 bits of precision
+    Defn: cuberoot2 |--> -0.629960524947437 - 1.09112363597172*I,
+  Ring morphism:
+    From: Number Field in cuberoot2 with defining polynomial x^3 - 2
+    To:   Complex Field with 53 bits of precision
+    Defn: cuberoot2 |--> -0.629960524947437 + 1.09112363597172*I,
+  Ring morphism:
+    From: Number Field in cuberoot2 with defining polynomial x^3 - 2
+    To:   Complex Field with 53 bits of precision
+    Defn: cuberoot2 |--> 1.25992104989487
+  ]
 \end{sageout}
 \end{sagecode}
 \end{example}

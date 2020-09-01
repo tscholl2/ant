@@ -190,8 +190,7 @@ f = x^5 + 7*x^4 + 3*x^2 - x + 1
 \noindent
 Then we create the corresponding number field obtained
 by adjoining a root of $f$, and find its ring of integers.
-%link
-\begin{sagecode}
+\begin{sagecode} %link
 \begin{sagecell}
 K.<a> = NumberField(f)
 OK = K.ring_of_integers()
@@ -205,8 +204,7 @@ OK.basis()
 \noindent
 We define the ideal $2\sO_K$ and factor -- it turns out to be prime.
 
-%link
-\begin{sagecode}
+\begin{sagecode} %link
 \begin{sagecell}
 I = K.fractional_ideal(2); I
 \end{sagecell}
@@ -230,8 +228,7 @@ True
 \noindent
 Finally we factor $5\sO_K$, which factors as a product of three primes.
 
-%link
-\begin{sagecode}
+\begin{sagecode} %link
 \begin{sagecell}
 I = K.fractional_ideal(5); I
 \end{sagecell}
