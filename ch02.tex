@@ -1022,13 +1022,11 @@ a.minpoly()
 \begin{sageout}
 x^2 - 2
 \end{sageout}
-\end{sagecode}
-%link
+\end{sagecode} %link
 Finally we compute the minimal polynomial of $\alpha=\sqrt{2}/2 + 3$, which
 is not integral, hence Proposition~\ref{prop:intfg} implies that $\alpha$
 is not an algebraic integer:
-%link
-\begin{sagecode}
+\begin{sagecode} %link
 \begin{sagecell}
 (a/2 + 3).minpoly()
 \end{sagecell}
@@ -1110,11 +1108,9 @@ k
 \begin{sageout}
 Number Field in a with defining polynomial x^2 - 2 over its base field
 \end{sageout}
-\end{sagecode}
-%link
+\end{sagecode} %link
 \noindent Here $a$ and $b$ are roots of $x^2-2$ and $x^3-5$, respectively.
-%link
-\begin{sagecode}
+\begin{sagecode} %link
 \begin{sagecell}
 a^2
 \end{sagecell}
@@ -1132,8 +1128,7 @@ b^3
 \noindent We compute the minimal polynomial of the sum and product of
 $\sqrt[3]{5}$ and $\sqrt{2}$.  The command {\tt absolute\_minpoly}
 gives the minimal polynomial of the element over the rational numbers $\QQ$.
-%link
-\begin{sagecode}
+\begin{sagecode} %link
 \begin{sagecell}
 (a+b).absolute_minpoly()
 \end{sagecell}
@@ -1353,12 +1348,10 @@ OK = K.ring_of_integers(); OK
 Order with module basis 1, i in Number Field in i with
 defining polynomial x^2 + 1
 \end{sageout}
-\end{sagecode}
-%link
+\end{sagecode} %link
 
 \noindent Next we compute the order $\ZZ + 3i \ZZ$.
-%link
-\begin{sagecode}
+\begin{sagecode} %link
 \begin{sagecell}
 O3 = K.order(3*i); O3
 \end{sagecell}
@@ -1372,13 +1365,11 @@ O3.gens()
 \begin{sageout}
 [1, 3*i]
 \end{sageout}
-\end{sagecode}
-%link
+\end{sagecode} %link
 
 
 \noindent We test whether certain elements are in the order.
-%link
-\begin{sagecode}
+\begin{sagecode} %link
 \begin{sagecell}
 5 + 9*i in O3
 \end{sagecell}
@@ -1418,13 +1409,11 @@ Oa.basis()
 \begin{sageout}
 [1, a, a^2]
 \end{sageout}
-\end{sagecode}
-%link
+\end{sagecode} %link
 
 \noindent Next we compute a $\ZZ$-basis for the maximal order $\sO_K$ of $K$, and
 compute that the index of $\ZZ[a]$ in $\sO_K$ is $2197=13^3$.
-%link
-\begin{sagecode}
+\begin{sagecode} %link
 \begin{sagecell}
 OK = K.maximal_order()
 OK.basis()
@@ -1556,22 +1545,18 @@ cuberoot2^3
 \begin{sageout}
 2
 \end{sageout}
-\end{sagecode}
-%link
+\end{sagecode} %link
 \noindent Then we list the Galois conjugates of $\sqrt[3]{2}$.
-%link
-\begin{sagecode}
+\begin{sagecode} %link
 \begin{sagecell}
 cuberoot2.galois_conjugates(L)
 \end{sagecell}
 \begin{sageout}
 [cuberoot2, (-zeta3 - 1)*cuberoot2, zeta3*cuberoot2]
 \end{sageout}
-\end{sagecode}
-%link
+\end{sagecode} %link
 \noindent Note that $\zeta_3^2 = -\zeta_3 - 1$:
-%link
-\begin{sagecode}
+\begin{sagecode} %link
 \begin{sagecell}
 zeta3 = L.base_field().0
 zeta3^2
@@ -1902,13 +1887,11 @@ A = matrix(ZZ, 2, [1,2, 3,4]); A
 \begin{sagecell}
 Bstar, mu = A.gramm_schmidt()
 \end{sagecell}
-\end{sagecode}
-%link
+\end{sagecode} %link
 
 \noindent{}The rows of the matrix $B^*$ are obtained
 from the rows of $A$ by the Gramm-Schmidt procedure.
-%link
-\begin{sagecode}
+\begin{sagecode} %link
 \begin{sagecell}
 Bstar
 \end{sagecell}
@@ -2027,14 +2010,12 @@ cputime(t)     # random output
 \begin{sageout}
 3.0494159999999999
 \end{sageout}
-\end{sagecode}
-%link
+\end{sagecode} %link
 
 \noindent{}There is even a very fast variant of Stehle's implementation that computes a basis for $L$ that is very likely LLL reduced but may in rare
 cases fail to be LLL reduced.
 
-%link
-\begin{sagecode}
+\begin{sagecode} %link
 \begin{sagecell}
 t = cputime()
 B = A.LLL(algorithm="fpLLL:fast")   # not tested
@@ -2113,12 +2094,10 @@ def myalgdep(a, d, K=10^6):
     v = L[0][:-1].list()
     return ZZ['x'](v)
 \end{sagecell}
-\end{sagecode}
-%link
+\end{sagecode} %link
 
 Here is an example of using it:
-%link
-\begin{sagecode}
+\begin{sagecode} %link
 \begin{sagecell}
 R.<x> = RDF[]
 f = 2*x^3 - 3*x^2 + 10*x - 4
